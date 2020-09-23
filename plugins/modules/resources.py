@@ -161,7 +161,7 @@ options:
     - Optional query parameter to define a tag filter. May use whitespace-separated
       AND/OR query (e.g. (one:1) OR (two:2) AND (three:3)) syntax or tagKey:tagValue
       syntax
-    type: dict
+    type: str
   validate:
     description:
     - Whether to perform custom validation in addition to built-in schema and accessor
@@ -181,9 +181,13 @@ IN_QUERY_PARAMETER = [
     "offset",
     "p",
     "pageToken",
+    "productId",
+    "providerResourceId",
     "q",
     "resourceProviderId",
     "resourceTypeId",
+    "subDomainId",
+    "tags",
     "validate",
 ]
 from ansible.module_utils.basic import env_fallback
@@ -192,7 +196,7 @@ try:
     from ansible_module.turbo.module import AnsibleTurboModule as AnsibleModule
 except ImportError:
     from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.vendor.app.plugins.module_utils.app import (
+from ansible_collections.ciena.mdso.plugins.module_utils.mdso import (
     gen_args,
     open_session,
     update_changed_flag,
@@ -201,21 +205,21 @@ from ansible_collections.vendor.app.plugins.module_utils.app import (
 
 def prepare_argument_spec():
     argument_spec = {
-        "app_hostname": dict(
-            type="str", required=False, fallback=(env_fallback, ["APP_HOST"])
+        "mdso_hostname": dict(
+            type="str", required=False, fallback=(env_fallback, ["MDSO_HOST"])
         ),
-        "app_username": dict(
-            type="str", required=False, fallback=(env_fallback, ["APP_USER"])
+        "mdso_username": dict(
+            type="str", required=False, fallback=(env_fallback, ["MDSO_USER"])
         ),
-        "app_password": dict(
+        "mdso_password": dict(
             type="str",
             required=False,
             no_log=True,
-            fallback=(env_fallback, ["APP_PASSWORD"]),
+            fallback=(env_fallback, ["MDSO_PASSWORD"]),
         ),
     }
     argument_spec["validate"] = {"type": "bool", "operationIds": ["post"]}
-    argument_spec["tags"] = {"type": "dict", "operationIds": ["get", "head", "post"]}
+    argument_spec["tags"] = {"type": "str", "operationIds": ["get", "head", "post"]}
     argument_spec["subDomainId"] = {
         "type": "str",
         "operationIds": ["get", "head", "post"],
@@ -289,16 +293,16 @@ async def main():
     module_args = prepare_argument_spec()
     module = AnsibleModule(argument_spec=module_args, supports_check_mode=True)
     session = await open_session(
-        app_hostname=module.params["app_hostname"],
-        app_username=module.params["app_username"],
-        app_password=module.params["app_password"],
+        mdso_hostname=module.params["mdso_hostname"],
+        mdso_username=module.params["mdso_username"],
+        mdso_password=module.params["mdso_password"],
     )
     result = await entry_point(module, session)
     module.exit_json(**result)
 
 
 def url(params):
-    return "https://{app_hostname}/bpocore/market/api/v1/resources".format(**params)
+    return "https://{mdso_hostname}/bpocore/market/api/v1/resources".format(**params)
 
 
 async def entry_point(module, session):
@@ -307,13 +311,10 @@ async def entry_point(module, session):
 
 
 async def _get(params, session):
-    accepted_fields = ["productId", "providerResourceId", "subDomainId", "tags"]
-    spec = {}
-    for i in accepted_fields:
-        if params[i]:
-            spec[i] = params[i]
-    _url = "https://{app_hostname}/bpocore/market/api/v1/resources".format(**params)
-    async with session.get(_url, json=spec) as resp:
+    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources".format(
+        **params
+    ) + gen_args(params, IN_QUERY_PARAMETER)
+    async with session.get(_url) as resp:
         content_types = [
             "application/json-patch+json",
             "application/vnd.api+json",
@@ -330,13 +331,10 @@ async def _get(params, session):
 
 
 async def _head(params, session):
-    accepted_fields = ["productId", "providerResourceId", "subDomainId", "tags"]
-    spec = {}
-    for i in accepted_fields:
-        if params[i]:
-            spec[i] = params[i]
-    _url = "https://{app_hostname}/bpocore/market/api/v1/resources".format(**params)
-    async with session.head(_url, json=spec) as resp:
+    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources".format(
+        **params
+    ) + gen_args(params, IN_QUERY_PARAMETER)
+    async with session.head(_url) as resp:
         content_types = [
             "application/json-patch+json",
             "application/vnd.api+json",
@@ -362,21 +360,17 @@ async def _post(params, session):
         "nativeState",
         "orchState",
         "orderId",
-        "productId",
         "properties",
         "providerData",
-        "providerResourceId",
         "reason",
         "shared",
         "sharingPermissionId",
-        "subDomainId",
-        "tags",
     ]
     spec = {}
     for i in accepted_fields:
         if params[i]:
             spec[i] = params[i]
-    _url = "https://{app_hostname}/bpocore/market/api/v1/resources".format(**params)
+    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources".format(**params)
     async with session.post(_url, json=spec) as resp:
         content_types = [
             "application/json-patch+json",

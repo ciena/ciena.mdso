@@ -127,7 +127,7 @@ try:
     from ansible_module.turbo.module import AnsibleTurboModule as AnsibleModule
 except ImportError:
     from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.vendor.app.plugins.module_utils.app import (
+from ansible_collections.ciena.mdso.plugins.module_utils.mdso import (
     gen_args,
     open_session,
     update_changed_flag,
@@ -136,17 +136,17 @@ from ansible_collections.vendor.app.plugins.module_utils.app import (
 
 def prepare_argument_spec():
     argument_spec = {
-        "app_hostname": dict(
-            type="str", required=False, fallback=(env_fallback, ["APP_HOST"])
+        "mdso_hostname": dict(
+            type="str", required=False, fallback=(env_fallback, ["MDSO_HOST"])
         ),
-        "app_username": dict(
-            type="str", required=False, fallback=(env_fallback, ["APP_USER"])
+        "mdso_username": dict(
+            type="str", required=False, fallback=(env_fallback, ["MDSO_USER"])
         ),
-        "app_password": dict(
+        "mdso_password": dict(
             type="str",
             required=False,
             no_log=True,
-            fallback=(env_fallback, ["APP_PASSWORD"]),
+            fallback=(env_fallback, ["MDSO_PASSWORD"]),
         ),
     }
     argument_spec["updatedAt"] = {"type": "str", "operationIds": ["patch", "put"]}
@@ -206,16 +206,16 @@ async def main():
     module_args = prepare_argument_spec()
     module = AnsibleModule(argument_spec=module_args, supports_check_mode=True)
     session = await open_session(
-        app_hostname=module.params["app_hostname"],
-        app_username=module.params["app_username"],
-        app_password=module.params["app_password"],
+        mdso_hostname=module.params["mdso_hostname"],
+        mdso_username=module.params["mdso_username"],
+        mdso_password=module.params["mdso_password"],
     )
     result = await entry_point(module, session)
     module.exit_json(**result)
 
 
 def url(params):
-    return "https://{app_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
+    return "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
     )
 
@@ -231,7 +231,7 @@ async def _delete(params, session):
     for i in accepted_fields:
         if params[i]:
             spec[i] = params[i]
-    _url = "https://{app_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
+    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
     )
     async with session.delete(_url, json=spec) as resp:
@@ -256,7 +256,7 @@ async def _get(params, session):
     for i in accepted_fields:
         if params[i]:
             spec[i] = params[i]
-    _url = "https://{app_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
+    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
     )
     async with session.get(_url, json=spec) as resp:
@@ -281,7 +281,7 @@ async def _head(params, session):
     for i in accepted_fields:
         if params[i]:
             spec[i] = params[i]
-    _url = "https://{app_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
+    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
     )
     async with session.head(_url, json=spec) as resp:
@@ -322,7 +322,7 @@ async def _patch(params, session):
     for i in accepted_fields:
         if params[i]:
             spec[i] = params[i]
-    _url = "https://{app_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
+    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
     )
     async with session.patch(_url, json=spec) as resp:
@@ -363,7 +363,7 @@ async def _put(params, session):
     for i in accepted_fields:
         if params[i]:
             spec[i] = params[i]
-    _url = "https://{app_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
+    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
     )
     async with session.put(_url, json=spec) as resp:

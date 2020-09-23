@@ -7,7 +7,7 @@ from async_lru import alru_cache
 
 @alru_cache()
 async def open_session(
-    mdso_hostname=None, mdso_username=None, mdso_password=None, validate_certs=False,
+    mdso_hostname=None, mdso_username=None, mdso_password=None, validate_certs=False
 ):
     connector = aiohttp.TCPConnector(limit=20, ssl=validate_certs)
     async with aiohttp.ClientSession(
