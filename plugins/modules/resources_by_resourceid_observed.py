@@ -342,6 +342,7 @@ async def _patch(params, session):
         "id",
         "label",
         "nativeState",
+        "obfuscate",
         "orchState",
         "orderId",
         "productId",
@@ -349,6 +350,7 @@ async def _patch(params, session):
         "providerData",
         "providerResourceId",
         "reason",
+        "resourceId",
         "resourceTypeId",
         "revision",
         "shared",
@@ -360,6 +362,7 @@ async def _patch(params, session):
         "updateReason",
         "updateState",
         "updatedAt",
+        "validate",
     ]
     spec = {}
     for i in accepted_fields:
@@ -393,6 +396,7 @@ async def _put(params, session):
         "id",
         "label",
         "nativeState",
+        "obfuscate",
         "orchState",
         "orderId",
         "productId",
@@ -400,12 +404,14 @@ async def _put(params, session):
         "providerData",
         "providerResourceId",
         "reason",
+        "resourceId",
         "resourceTypeId",
         "shared",
         "sharingPermissionId",
         "subDomainId",
         "tags",
         "tenantId",
+        "validate",
     ]
     spec = {}
     for i in accepted_fields:

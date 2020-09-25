@@ -257,12 +257,14 @@ async def _post(params, session):
         "accessUrl",
         "address",
         "description",
+        "obfuscate",
         "onlyEnableTypes",
         "operationMode",
         "properties",
         "rpId",
         "tenantId",
         "title",
+        "validate",
     ]
     spec = {}
     for i in accepted_fields:

@@ -1,0 +1,110 @@
+> RESOURCES_BY_RESOURCEID_DEPENDENCIES
+
+        Handle resource of type resources_by_resourceid_dependencies
+
+OPTIONS (= is mandatory):
+
+- applicationSliceId
+        Optional query to limit resources by the application slice id.
+        [Default: (null)]
+        type: str
+
+- domainId
+        Optional query to limit resources by domain
+        [Default: (null)]
+        type: str
+
+- exactTypeId
+        Optional query to limit resources by one or more exact
+        resource types (takes precedence over resourceTypeId). Use
+        comma-separated string to specify multiple resource types.
+        [Default: (null)]
+        type: str
+
+- limit
+        The maximum number of elements to return in a single paged
+        request
+        [Default: (null)]
+        type: int
+
+- obfuscate
+        If true, schema obfuscated values will be replaced with a
+        fixed string in the response.
+        [Default: (null)]
+        type: bool
+
+- offset
+        Requested offset within the total result set to be the first
+        element in the paged response
+        [Default: (null)]
+        type: int
+
+- p
+        Optional query parameter to define a partial string match
+        filter using property:value syntax
+        [Default: (null)]
+        type: str
+
+- pageToken
+        String pagination token returned from a previous query that
+        encodes query information in order to optimize a
+        subsequent request for a page of results. The token includes
+        the limit and offset parameters for the next page, but one or
+        both can be included to override the encoded values
+        [Default: (null)]
+        type: str
+
+- productId
+        Optional query to limit resources by product type
+        [Default: (null)]
+        type: str
+
+- q
+        Optional query parameter to define a query filter using
+        property:value syntax
+        [Default: (null)]
+        type: str
+
+- recursive
+        If true, returns indirect dependencies as well, i.e.,
+        dependencies of the dependencies, etc.
+        [Default: (null)]
+        type: bool
+
+- resourceId
+        Identifies the resource for which dependency resources are
+        searched
+        [Default: (null)]
+        type: str
+
+- resourceProviderId
+        Optional query to limit resources by resource provider
+        [Default: (null)]
+        type: str
+
+- resourceTypeId
+        Optional query to limit resources by one or more resource
+        types. Use a comma-separated string to specify multiple
+        resource types.
+        [Default: (null)]
+        type: str
+
+- state
+        (Choices: get, head)[Default: (null)]
+        type: str
+
+- subDomainId
+        Optional query to limit resources by one or more subdomain
+        ids. Use a comma-separated string to specify multiple
+        subdomain ids.
+        [Default: (null)]
+        type: str
+
+- tags
+        Optional query parameter to define a tag filter using
+        tagKey:tagValue syntax
+        [Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

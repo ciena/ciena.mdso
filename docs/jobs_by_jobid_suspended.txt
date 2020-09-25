@@ -1,0 +1,22 @@
+> JOBS_BY_JOBID_SUSPENDED
+
+        Handle resource of type jobs_by_jobid_suspended
+
+OPTIONS (= is mandatory):
+
+- jobId
+        Identifier of the job to be suspended or resumed
+        [Default: (null)]
+        type: str
+
+- state
+        (Choices: put)[Default: (null)]
+        type: str
+
+- suspended
+        Job suspension state
+        [Default: (null)]
+        type: bool
+
+
+REQUIREMENTS:  python >= 3.6

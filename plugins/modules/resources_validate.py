@@ -215,9 +215,11 @@ async def entry_point(module, session):
 async def _post(params, session):
     accepted_fields = [
         "autoClean",
+        "custom",
         "description",
         "desiredOrchState",
         "discovered",
+        "full",
         "label",
         "nativeState",
         "orchState",

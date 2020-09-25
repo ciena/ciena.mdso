@@ -123,12 +123,15 @@ async def entry_point(module, session):
 
 
 async def _post(params, session):
+    accepted_fields = ["domainId", "full"]
+    spec = {}
+    for i in accepted_fields:
+        if params[i]:
+            spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/domains/{domainId}/resync".format(
         **params
-    ) + gen_args(
-        params, IN_QUERY_PARAMETER
     )
-    async with session.post(_url) as resp:
+    async with session.post(_url, json=spec) as resp:
         content_types = [
             "application/json-patch+json",
             "application/vnd.api+json",

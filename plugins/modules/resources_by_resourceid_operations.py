@@ -267,6 +267,7 @@ async def _post(params, session):
         "description",
         "inputs",
         "interface",
+        "resourceId",
         "resourceStateConstraints",
         "title",
     ]

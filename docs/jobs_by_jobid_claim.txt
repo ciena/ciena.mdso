@@ -1,0 +1,28 @@
+> JOBS_BY_JOBID_CLAIM
+
+        Handle resource of type jobs_by_jobid_claim
+
+OPTIONS (= is mandatory):
+
+- capabilities
+        Array of strings that expresses the capabilities supported by
+        the job executor
+        [Default: (null)]
+        type: list
+
+- executorUrl
+        URL that implements the Executor API for this job
+        [Default: (null)]
+        type: str
+
+- jobId
+        Identifier of the job to claim
+        [Default: (null)]
+        type: str
+
+- state
+        (Choices: post)[Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

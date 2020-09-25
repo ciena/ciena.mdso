@@ -248,6 +248,7 @@ async def _head(params, session):
 
 async def _patch(params, session):
     accepted_fields = [
+        "applicationSliceId",
         "description",
         "extendable",
         "holderTenantId",
@@ -284,6 +285,7 @@ async def _patch(params, session):
 
 async def _put(params, session):
     accepted_fields = [
+        "applicationSliceId",
         "description",
         "extendable",
         "holderTenantId",

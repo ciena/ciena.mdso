@@ -157,8 +157,10 @@ async def entry_point(module, session):
 async def _post(params, session):
     accepted_fields = [
         "description",
+        "full",
         "inputs",
         "interface",
+        "resourceId",
         "resourceStateConstraints",
         "title",
     ]

@@ -1,0 +1,22 @@
+> RESOURCES_BY_RESOURCEID_SUB_DOMAIN
+
+        Handle resource of type resources_by_resourceid_sub_domain
+
+OPTIONS (= is mandatory):
+
+- resourceId
+        Identifier of the resource to be assigned to the subdomain
+        [Default: (null)]
+        type: str
+
+- state
+        (Choices: put)[Default: (null)]
+        type: str
+
+- subDomainId
+        The ID of the sub-domain
+        [Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

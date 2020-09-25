@@ -1,0 +1,73 @@
+> DOMAINS_VALIDATE
+
+        Handle resource of type domains_validate
+
+OPTIONS (= is mandatory):
+
+- accessUrl
+        Access URL to the domain
+        [Default: (null)]
+        type: str
+
+- address
+        Address of the domain
+        Validate attributes are:
+         - `city' (str): City
+         - `country' (str): Country
+         - `latitude' (number): Latitude
+         - `longitude' (number): Longitude
+         - `state' (str): State/province
+         - `street' (str): Street
+         - `zip' (str): Postal/zip code
+        [Default: (null)]
+        type: dict
+
+- description
+        Detailed description
+        [Default: (null)]
+        type: str
+
+- full
+        Whether to perform a full validation request
+        [Default: (null)]
+        type: bool
+
+- onlyEnableTypes
+        When non-empty, only enable these resource types in the domain
+        [Default: (null)]
+        type: list
+
+- operationMode
+        Operation mode of this domain
+        [Default: (null)]
+        type: str
+
+- properties
+        Properties the domain
+        Validate attributes are:
+         - `obj' (list):
+        [Default: (null)]
+        type: dict
+
+- rpId
+        Resource provider managing this domain
+        [Default: (null)]
+        type: str
+
+- state
+        (Choices: post)[Default: (null)]
+        type: str
+
+- tenantId
+        Orchestrator tenant ID for the domain owner (if unspecified
+        defaults to requester)
+        [Default: (null)]
+        type: str
+
+- title
+        Descriptive name/title of domain
+        [Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

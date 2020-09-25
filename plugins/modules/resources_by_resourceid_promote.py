@@ -275,6 +275,7 @@ async def _post(params, session):
         "providerData",
         "providerResourceId",
         "reason",
+        "resourceId",
         "resourceTypeId",
         "revision",
         "shared",

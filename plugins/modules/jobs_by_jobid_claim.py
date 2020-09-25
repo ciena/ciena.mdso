@@ -128,7 +128,7 @@ async def entry_point(module, session):
 
 
 async def _post(params, session):
-    accepted_fields = ["capabilities", "executorUrl"]
+    accepted_fields = ["capabilities", "executorUrl", "jobId"]
     spec = {}
     for i in accepted_fields:
         if params[i]:

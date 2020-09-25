@@ -1,0 +1,180 @@
+> RESOURCES
+
+        Handle resource of type resources
+
+OPTIONS (= is mandatory):
+
+- applicationSliceId
+        Optional query to limit resources by the application slice id.
+        [Default: (null)]
+        type: str
+
+- autoClean
+        Free up any resources automatically upon any activation
+        failure
+        [Default: (null)]
+        type: bool
+
+- description
+        Detailed description of this resource
+        [Default: (null)]
+        type: str
+
+- desiredOrchState
+        Desired orchestration state
+        [Default: (null)]
+        type: str
+
+- discovered
+        Is this resource discovered
+        [Default: (null)]
+        type: bool
+
+- domainId
+        Optional query to limit resources by domain
+        [Default: (null)]
+        type: str
+
+- exactTypeId
+        Optional query to limit resources by one or more exact
+        resource types (takes precedence over resourceTypeId). Use a
+        comma-separated string to specify multiple resource types.
+        [Default: (null)]
+        type: str
+
+- label
+        Textual label
+        [Default: (null)]
+        type: str
+
+- limit
+        The maximum number of elements to return in a single paged
+        request
+        [Default: (null)]
+        type: int
+
+- nativeState
+        Native (type specific) state
+        [Default: (null)]
+        type: str
+
+- obfuscate
+        If true, schema obfuscated values will be replaced with a
+        fixed string in the response.
+        [Default: (null)]
+        type: bool
+
+- offset
+        Requested offset within the total result set to be the first
+        element in the paged response
+        [Default: (null)]
+        type: int
+
+- orchState
+        Current state of the resource in the orchestrator
+        [Default: (null)]
+        type: str
+
+- orderId
+        If applicable, the order containing this resource
+        [Default: (null)]
+        type: str
+
+- p
+        Optional query parameter to define a partial string match
+        filter using property:value syntax
+        [Default: (null)]
+        type: str
+
+- pageToken
+        String pagination token returned from a previous query that
+        encodes query information in order to optimize a
+        subsequent request for a page of results. The token includes
+        the limit and offset parameters for the next page, but one or
+        both can be included to override the encoded values
+        [Default: (null)]
+        type: str
+
+- productId
+        Optional query to limit resources by product type
+        [Default: (null)]
+        type: str
+
+- properties
+        Properties
+        Validate attributes are:
+         - `obj' (list):
+        [Default: (null)]
+        type: dict
+
+- providerData
+        Provider custom data
+        Validate attributes are:
+         - `obj' (list):
+        [Default: (null)]
+        type: dict
+
+- providerResourceId
+        Optional query to identify resource by provider resource ID
+        [Default: (null)]
+        type: str
+
+- q
+        Optional query parameter to define a query filter using
+        property:value syntax
+        [Default: (null)]
+        type: str
+
+- reason
+        Reason for the orchestration state
+        [Default: (null)]
+        type: str
+
+- resourceProviderId
+        Optional query to limit resources by resource provider
+        [Default: (null)]
+        type: str
+
+- resourceTypeId
+        Optional query to limit resources by one or more resource
+        types. Use a comma-separated string to specify multiple
+        resource types.
+        [Default: (null)]
+        type: str
+
+- shared
+        Is resource shared?
+        [Default: (null)]
+        type: bool
+
+- sharingPermissionId
+        The sharing permission of the resource
+        [Default: (null)]
+        type: str
+
+- state
+        (Choices: get, head, post)[Default: (null)]
+        type: str
+
+- subDomainId
+        Optional query to limit resources by one or more subdomain
+        ids. Use a comma-separated string to specify multiple
+        subdomain ids.
+        [Default: (null)]
+        type: str
+
+- tags
+        Optional query parameter to define a tag filter. May use
+        whitespace-separated AND/OR query (e.g. (one:1) OR (two:2) AND
+        (three:3)) syntax or tagKey:tagValue syntax
+        [Default: (null)]
+        type: str
+
+- validate
+        Whether to perform custom validation in addition to built-in
+        schema and accessor validations
+        [Default: (null)]
+        type: bool
+
+
+REQUIREMENTS:  python >= 3.6

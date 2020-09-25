@@ -244,6 +244,7 @@ async def _patch(params, session):
         "id",
         "isBuiltIn",
         "label",
+        "sharingPermissionId",
         "updatableBySubTenants",
         "visibleToSubTenants",
     ]
@@ -277,6 +278,7 @@ async def _put(params, session):
         "id",
         "isBuiltIn",
         "label",
+        "sharingPermissionId",
         "updatableBySubTenants",
         "visibleToSubTenants",
     ]

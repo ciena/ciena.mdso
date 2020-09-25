@@ -237,6 +237,7 @@ async def _post(params, session):
         "assignable",
         "decomposable",
         "description",
+        "domainId",
         "extendedApplicationSlices",
         "name",
         "parentId",

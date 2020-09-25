@@ -1,0 +1,33 @@
+> TAG_KEYS
+
+        Handle resource of type tag_keys
+
+OPTIONS (= is mandatory):
+
+- autoIndexed
+        Are tag value for this key auto-indexed?
+        [Default: (null)]
+        type: bool
+
+- description
+        Textual description of tag key
+        [Default: (null)]
+        type: str
+
+- key
+        Tag key
+        [Default: (null)]
+        type: str
+
+- q
+        Optional query parameter to define a query filter using
+        property:value syntax
+        [Default: (null)]
+        type: str
+
+- state
+        (Choices: get, head, post)[Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

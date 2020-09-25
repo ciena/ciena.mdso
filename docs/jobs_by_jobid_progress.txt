@@ -1,0 +1,22 @@
+> JOBS_BY_JOBID_PROGRESS
+
+        Handle resource of type jobs_by_jobid_progress
+
+OPTIONS (= is mandatory):
+
+- jobId
+        Identifier of the job whose execution is in progress
+        [Default: (null)]
+        type: str
+
+- progress
+        Value describing the execution progress
+        [Default: (null)]
+        type: dict
+
+- state
+        (Choices: put)[Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

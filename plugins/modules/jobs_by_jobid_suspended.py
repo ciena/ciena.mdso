@@ -123,7 +123,7 @@ async def entry_point(module, session):
 
 
 async def _put(params, session):
-    accepted_fields = ["suspended"]
+    accepted_fields = ["jobId", "suspended"]
     spec = {}
     for i in accepted_fields:
         if params[i]:

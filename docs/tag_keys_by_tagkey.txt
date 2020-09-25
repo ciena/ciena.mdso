@@ -1,0 +1,32 @@
+> TAG_KEYS_BY_TAGKEY
+
+        Handle resource of type tag_keys_by_tagkey
+
+OPTIONS (= is mandatory):
+
+- autoIndexed
+        Are tag value for this key auto-indexed?
+        [Default: (null)]
+        type: bool
+
+- description
+        Textual description of tag key
+        [Default: (null)]
+        type: str
+
+- key
+        Tag key
+        [Default: (null)]
+        type: str
+
+- state
+        (Choices: delete, get, head, patch, put)[Default: (null)]
+        type: str
+
+- tagKey
+         Requested tag key
+        [Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

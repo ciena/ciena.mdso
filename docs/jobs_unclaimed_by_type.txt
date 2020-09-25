@@ -1,0 +1,37 @@
+> JOBS_UNCLAIMED_BY_TYPE
+
+        Handle resource of type jobs_unclaimed_by_type
+
+OPTIONS (= is mandatory):
+
+- afterJobId
+        The last jobId of the page preceding the desired page
+        [Default: (null)]
+        type: str
+
+- maxCount
+        Maximum number of jobs to return in a page
+        [Default: (null)]
+        type: int
+
+- maxWait
+        Maximum wait time in milliseconds before returning results
+        [Default: (null)]
+        type: int
+
+- minCount
+        Minimum number of jobs to return (unless maxWait is exceeded)
+        [Default: (null)]
+        type: int
+
+- state
+        (Choices: get, head)[Default: (null)]
+        type: str
+
+- type
+        Job type
+        [Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

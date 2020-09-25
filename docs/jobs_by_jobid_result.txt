@@ -1,0 +1,34 @@
+> JOBS_BY_JOBID_RESULT
+
+        Handle resource of type jobs_by_jobid_result
+
+OPTIONS (= is mandatory):
+
+- _type
+        Type of job result
+        [Default: (null)]
+        type: str
+
+- jobId
+        Identifier of the job whose execution is complete
+        [Default: (null)]
+        type: str
+
+- reason
+        For JobFailure, a String description of the failure
+        [Default: (null)]
+        type: str
+
+- result
+        For JobSuccess, a JSON object containing the job results
+        Validate attributes are:
+         - `obj' (list):
+        [Default: (null)]
+        type: dict
+
+- state
+        (Choices: put)[Default: (null)]
+        type: str
+
+
+REQUIREMENTS:  python >= 3.6

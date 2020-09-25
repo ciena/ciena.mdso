@@ -273,6 +273,7 @@ async def _patch(params, session):
         "ownerTenantId",
         "parentId",
         "scope",
+        "subDomainId",
     ]
     spec = {}
     for i in accepted_fields:
@@ -311,6 +312,7 @@ async def _put(params, session):
         "ownerTenantId",
         "parentId",
         "scope",
+        "subDomainId",
     ]
     spec = {}
     for i in accepted_fields:

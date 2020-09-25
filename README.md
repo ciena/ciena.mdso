@@ -10,6 +10,8 @@ This collection has been tested against MDSO 20.06
 
 This collection has been tested against following Ansible versions: **>=2.9.10,<2.11**.
 
+NOTE: for Python3+ use ansible>=2.10.0
+
 ## Included content
 
 <!--start collection content-->
@@ -60,10 +62,14 @@ You can call modules by their Fully Qualified Collection Namespace (FQCN), such 
   - ciena.mdso
   gather_facts: false
   tasks:
-  - name: get resources
-    resources:
+  - name: get NumberPool products
+    products:
       <<: *mdso_creds
       state: get
+      q: resourceTypeId:tosca.resourceTypes.NumberPool
+    register: products
+  - debug:
+      var: products
 ```
 
 ## Contributing to this collection

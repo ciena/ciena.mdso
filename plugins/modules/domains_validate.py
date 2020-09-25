@@ -177,6 +177,7 @@ async def _post(params, session):
         "accessUrl",
         "address",
         "description",
+        "full",
         "onlyEnableTypes",
         "operationMode",
         "properties",

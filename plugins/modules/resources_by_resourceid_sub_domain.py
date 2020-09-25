@@ -123,7 +123,7 @@ async def entry_point(module, session):
 
 
 async def _put(params, session):
-    accepted_fields = ["subDomainId"]
+    accepted_fields = ["resourceId", "subDomainId"]
     spec = {}
     for i in accepted_fields:
         if params[i]:

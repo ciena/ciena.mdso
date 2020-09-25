@@ -267,6 +267,7 @@ async def _post(params, session):
         "properties",
         "providerData",
         "reason",
+        "relationshipTypeId",
         "requirementName",
         "sourceId",
         "targetId",

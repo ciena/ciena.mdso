@@ -184,7 +184,7 @@ async def _head(params, session):
 
 
 async def _post(params, session):
-    accepted_fields = ["description", "key", "value"]
+    accepted_fields = ["description", "key", "tagKey", "value"]
     spec = {}
     for i in accepted_fields:
         if params[i]:

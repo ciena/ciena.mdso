@@ -122,7 +122,7 @@ async def entry_point(module, session):
 
 
 async def _post(params, session):
-    accepted_fields = ["resources"]
+    accepted_fields = ["resources", "subDomainId"]
     spec = {}
     for i in accepted_fields:
         if params[i]:

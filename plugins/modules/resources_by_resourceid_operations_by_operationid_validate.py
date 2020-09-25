@@ -225,6 +225,8 @@ async def _post(params, session):
         "id",
         "inputs",
         "interface",
+        "method",
+        "operationId",
         "outputs",
         "progress",
         "providerData",

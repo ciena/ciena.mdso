@@ -203,7 +203,7 @@ async def _head(params, session):
 
 
 async def _patch(params, session):
-    accepted_fields = ["autoIndexed", "description", "key"]
+    accepted_fields = ["autoIndexed", "description", "key", "tagKey"]
     spec = {}
     for i in accepted_fields:
         if params[i]:
@@ -228,7 +228,7 @@ async def _patch(params, session):
 
 
 async def _put(params, session):
-    accepted_fields = ["autoIndexed", "description", "key"]
+    accepted_fields = ["autoIndexed", "description", "key", "tagKey"]
     spec = {}
     for i in accepted_fields:
         if params[i]:

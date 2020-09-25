@@ -358,13 +358,19 @@ async def _post(params, session):
         "discovered",
         "label",
         "nativeState",
+        "obfuscate",
         "orchState",
         "orderId",
+        "productId",
         "properties",
         "providerData",
+        "providerResourceId",
         "reason",
         "shared",
         "sharingPermissionId",
+        "subDomainId",
+        "tags",
+        "validate",
     ]
     spec = {}
     for i in accepted_fields:
