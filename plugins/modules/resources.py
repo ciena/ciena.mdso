@@ -360,6 +360,7 @@ async def _post(params, session):
         "nativeState",
         "orchState",
         "orderId",
+        "productId",
         "properties",
         "providerData",
         "reason",
