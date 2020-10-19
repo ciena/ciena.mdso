@@ -268,7 +268,7 @@ async def _post(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if params[i]:
+        if i in params:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/domains".format(**params)
     async with session.post(_url, json=spec) as resp:

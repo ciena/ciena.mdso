@@ -138,7 +138,7 @@ async def _put(params, session):
     accepted_fields = ["_type", "jobId", "reason", "result"]
     spec = {}
     for i in accepted_fields:
-        if params[i]:
+        if i in params:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/result".format(
         **params

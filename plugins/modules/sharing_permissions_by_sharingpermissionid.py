@@ -48,7 +48,7 @@ options:
     type: str
   sharingPermissionId:
     description:
-    - Identifier of the sharing permission to update
+    - Identifier of the sharing permission to delete
     type: str
   state:
     choices:
@@ -250,7 +250,7 @@ async def _patch(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if params[i]:
+        if i in params:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/sharing-permissions/{sharingPermissionId}".format(
         **params
@@ -284,7 +284,7 @@ async def _put(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if params[i]:
+        if i in params:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/sharing-permissions/{sharingPermissionId}".format(
         **params

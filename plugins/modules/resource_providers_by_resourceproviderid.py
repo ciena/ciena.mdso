@@ -83,7 +83,7 @@ options:
     type: list
   resourceProviderId:
     description:
-    - Identifier of the resource provider to update
+    - Identifier of the resource provider to delete
     type: str
   resourceTypes:
     description:
@@ -295,7 +295,7 @@ async def _patch(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if params[i]:
+        if i in params:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
         **params
@@ -335,7 +335,7 @@ async def _put(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if params[i]:
+        if i in params:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
         **params

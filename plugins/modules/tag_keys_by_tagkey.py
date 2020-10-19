@@ -206,7 +206,7 @@ async def _patch(params, session):
     accepted_fields = ["autoIndexed", "description", "key", "tagKey"]
     spec = {}
     for i in accepted_fields:
-        if params[i]:
+        if i in params:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/tag-keys/{tagKey}".format(
         **params
@@ -231,7 +231,7 @@ async def _put(params, session):
     accepted_fields = ["autoIndexed", "description", "key", "tagKey"]
     spec = {}
     for i in accepted_fields:
-        if params[i]:
+        if i in params:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/tag-keys/{tagKey}".format(
         **params
