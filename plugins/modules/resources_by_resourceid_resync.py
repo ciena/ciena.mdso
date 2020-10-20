@@ -126,7 +126,7 @@ async def _post(params, session):
     accepted_fields = ["full", "resourceId"]
     spec = {}
     for i in accepted_fields:
-        if i in params:
+        if params[i] is not None:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/resync".format(
         **params

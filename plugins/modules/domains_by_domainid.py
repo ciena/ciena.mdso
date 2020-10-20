@@ -312,7 +312,7 @@ async def _patch(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if i in params:
+        if params[i] is not None:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/domains/{domainId}".format(
         **params
@@ -355,7 +355,7 @@ async def _put(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if i in params:
+        if params[i] is not None:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/domains/{domainId}".format(
         **params

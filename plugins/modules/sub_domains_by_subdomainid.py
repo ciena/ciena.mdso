@@ -85,7 +85,7 @@ options:
     type: str
   subDomainId:
     description:
-    - Identifier of the subdomain to delete
+    - Identifier of the subdomain to update
     type: str
 author: []
 version_added: 1.0.0
@@ -277,7 +277,7 @@ async def _patch(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if i in params:
+        if params[i] is not None:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/sub-domains/{subDomainId}".format(
         **params
@@ -316,7 +316,7 @@ async def _put(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if i in params:
+        if params[i] is not None:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/sub-domains/{subDomainId}".format(
         **params

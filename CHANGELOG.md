@@ -1,5 +1,11 @@
 # Ciena MDSO Release Notes
 
+## 1.1.3
+
+### Fix
+
+- check for None on unused props
+
 ## 1.1.2
 
 ### Fix

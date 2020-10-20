@@ -28,7 +28,7 @@ description: Handle resource of type application_slices_by_applicationsliceid
 options:
   applicationSliceId:
     description:
-    - Identifier of the application slice to delete
+    - Identifier of the application slice to update
     type: str
   description:
     description:
@@ -262,7 +262,7 @@ async def _patch(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if i in params:
+        if params[i] is not None:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/application-slices/{applicationSliceId}".format(
         **params
@@ -299,7 +299,7 @@ async def _put(params, session):
     ]
     spec = {}
     for i in accepted_fields:
-        if i in params:
+        if params[i] is not None:
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/application-slices/{applicationSliceId}".format(
         **params
