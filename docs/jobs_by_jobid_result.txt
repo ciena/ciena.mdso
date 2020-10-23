@@ -6,16 +6,20 @@ OPTIONS (= is mandatory):
 
 - _type
         Type of job result
+        Used by `state=['put']'
         [Default: (null)]
         type: str
 
 - jobId
         Identifier of the job whose execution is complete
+        Required with `state=['put']'
+        Used by `state=['put']'
         [Default: (null)]
         type: str
 
 - reason
         For JobFailure, a String description of the failure
+        Used by `state=['put']'
         [Default: (null)]
         type: str
 
@@ -23,6 +27,7 @@ OPTIONS (= is mandatory):
         For JobSuccess, a JSON object containing the job results
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['put']'
         [Default: (null)]
         type: dict
 

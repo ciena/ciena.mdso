@@ -29,20 +29,24 @@ options:
   domainId:
     description:
     - Identifier of the domain whose resources should be counted
+    - Used by I(state=['get', 'head'])
     type: str
   exactTypeId:
     description:
     - Identifier of the exact resource type whose resources should be counted. This
       can only be specified by master tenant.
+    - Used by I(state=['get', 'head'])
     type: str
   limit:
     description:
     - Optional parameter indicating maximum number to count. If the actual number
       is greater than the specified limit, the result will be shown as bounded.
+    - Used by I(state=['get', 'head'])
     type: int
   productId:
     description:
     - Identifier of the product whose resources should be counted
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:

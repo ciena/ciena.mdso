@@ -6,6 +6,8 @@ OPTIONS (= is mandatory):
 
 - jobId
         Identifier of the job to be suspended or resumed
+        Required with `state=['put']'
+        Used by `state=['put']'
         [Default: (null)]
         type: str
 
@@ -15,6 +17,7 @@ OPTIONS (= is mandatory):
 
 - suspended
         Job suspension state
+        Used by `state=['put']'
         [Default: (null)]
         type: bool
 

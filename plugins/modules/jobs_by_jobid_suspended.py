@@ -29,6 +29,8 @@ options:
   jobId:
     description:
     - Identifier of the job to be suspended or resumed
+    - Required with I(state=['put'])
+    - Used by I(state=['put'])
     type: str
   state:
     choices:
@@ -38,6 +40,7 @@ options:
   suspended:
     description:
     - Job suspension state
+    - Used by I(state=['put'])
     type: bool
 author: []
 version_added: 1.0.0
@@ -112,8 +115,10 @@ async def main():
 
 
 def url(params):
-    return "https://{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/suspended".format(
-        **params
+    return (
+        "https://{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/suspended".format(
+            **params
+        )
     )
 
 
@@ -128,8 +133,10 @@ async def _put(params, session):
     for i in accepted_fields:
         if params[i] is not None:
             spec[i] = params[i]
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/suspended".format(
-        **params
+    _url = (
+        "https://{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/suspended".format(
+            **params
+        )
     )
     async with session.put(_url, json=spec) as resp:
         content_types = [

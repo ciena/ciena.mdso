@@ -29,32 +29,39 @@ options:
   capabilityName:
     description:
     - Capability name in target resource
+    - Used by I(state=['post'])
     type: str
   exactRelationshipTypeId:
     description:
     - Optional query to limit relationships by an exact relationship type
+    - Used by I(state=['get', 'head'])
     type: str
   id:
     description:
     - Unique identifier for the relationship (optional/ignored on calls to create)
+    - Used by I(state=['post'])
     type: str
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   orchState:
     description:
     - Current state of the resource in the orchestrator
+    - Used by I(state=['post'])
     type: str
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   pageToken:
     description:
@@ -63,39 +70,47 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   properties:
     description:
     - Relationship properties
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerData:
     description:
     - Provider custom data
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   reason:
     description:
     - Reason for the orchestration state
+    - Used by I(state=['post'])
     type: str
   relationshipTypeId:
     description:
     - Optional query to limit relationships by the relationship type (including derived
       types)
+    - Used by I(state=['get', 'head', 'post'])
     type: str
   requirementName:
     description:
     - Requirement name in source resource
+    - Used by I(state=['post'])
     type: str
   sourceId:
     description:
     - UUID of source resource
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -107,6 +122,7 @@ options:
   targetId:
     description:
     - UUID of target resource
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

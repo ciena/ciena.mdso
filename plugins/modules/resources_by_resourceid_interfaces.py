@@ -30,14 +30,18 @@ options:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   resourceId:
     description:
     - Identifier of the resource whose interfaces will be queried
+    - Required with I(state=['get', 'head'])
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:

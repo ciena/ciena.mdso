@@ -29,74 +29,90 @@ options:
   createdAt:
     description:
     - When the operation was created
+    - Used by I(state=['patch', 'put'])
     type: str
   description:
     description:
     - Description of the operation
+    - Used by I(state=['patch', 'put'])
     type: str
   executionGroup:
     description:
     - Execution group of the operation
+    - Used by I(state=['patch', 'put'])
     type: str
   id:
     description:
     - Unique identifier for the operation
+    - Used by I(state=['patch', 'put'])
     type: str
   inputs:
     description:
     - Inputs of the operation
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   interface:
     description:
     - ID of the interface
+    - Used by I(state=['patch', 'put'])
     type: str
   minRevision:
     description:
     - Require the revision of the returned resource to be greater than or equal to
       minRevision. Respond with a 503 if the resource exists, but the revision does
       not meet the minRevision
+    - Used by I(state=['get', 'head'])
     type: int
   operationId:
     description:
     - Identifier of the operation to be updated
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   outputs:
     description:
     - Outputs of the operation
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   progress:
     description:
     - Describes any progress towards completion that the operation has made
     - 'Validate attributes are:'
     - ' - C(arr) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   providerData:
     description:
     - Provider custom data
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   reason:
     description:
     - Reason for the operation state
+    - Used by I(state=['patch', 'put'])
     type: str
   resourceId:
     description:
-    - Identifier of the resource whose operations will be changed
+    - Identifier of the resource whose operations will be queried
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   resourceStateConstraints:
     description:
     - Constraints of the resource state for this operation to execute
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   revision:
     description:
     - Strictly increasing revision number, incremented every update
+    - Used by I(state=['patch', 'put'])
     type: int
   state:
     choices:
@@ -110,10 +126,12 @@ options:
   title:
     description:
     - Title of the operation
+    - Used by I(state=['patch', 'put'])
     type: str
   updatedAt:
     description:
     - When the operation was last updated
+    - Used by I(state=['patch', 'put'])
     type: str
 author: []
 version_added: 1.0.0

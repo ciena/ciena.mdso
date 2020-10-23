@@ -6,6 +6,8 @@ OPTIONS (= is mandatory):
 
 - resourceTypeId
         Identifier of the resource type being queried
+        Required with `state=['get', 'head']'
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 

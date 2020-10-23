@@ -29,10 +29,13 @@ options:
   full:
     description:
     - Whether the requeset is for a full resync
+    - Used by I(state=['post'])
     type: bool
   productId:
     description:
     - Identifier of the product to be resynced
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   state:
     choices:

@@ -29,10 +29,12 @@ options:
   asyncProtocolVersion:
     description:
     - Identifies the async protocol version supported by the resource provider
+    - Used by I(state=['post'])
     type: str
   description:
     description:
     - Description of the resource provider
+    - Used by I(state=['post'])
     type: str
   domainSettings:
     description:
@@ -49,27 +51,33 @@ options:
     - ' - C(minInterUpsertIntervalMs) (number): Specifies the minimal inter-call interval
       bpocore should honor when upserting the Domain'
     - ' - C(rpType) (dict): Specifies the RP Type'
+    - Used by I(state=['post'])
     type: dict
   domainType:
     description:
     - Type of domain managed by the resource provider
+    - Used by I(state=['post'])
     type: str
   id:
     description:
     - Unique identifier to address the resource provider
+    - Used by I(state=['post'])
     type: str
   lastUpsertTime:
     description:
     - Last time the resource provider is upserted in the database
+    - Used by I(state=['post'])
     type: str
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   pageToken:
     description:
@@ -78,33 +86,40 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   properties:
     description:
     - Properties of the resource provider
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   protocolVersion:
     description:
     - Identifies the protocol version supported by the resource provider
+    - Used by I(state=['post'])
     type: str
   providerId:
     description:
     - Identifier of the resource provider in provider's context
+    - Used by I(state=['post'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   relationships:
     description:
     - Settings to declare how relationships should be identified for resource types
       managed by this resource provider
+    - Used by I(state=['post'])
     type: list
   resourceTypes:
     description:
     - List of resource types managed by the resource provider
+    - Used by I(state=['post'])
     type: list
   state:
     choices:
@@ -116,10 +131,12 @@ options:
   title:
     description:
     - Name of the resource provider
+    - Used by I(state=['post'])
     type: str
   uri:
     description:
     - Address to contact the resource provider
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

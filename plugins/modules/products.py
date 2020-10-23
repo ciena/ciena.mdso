@@ -29,43 +29,52 @@ options:
   active:
     description:
     - State of the product (active or inactive)
+    - Used by I(state=['post'])
     type: bool
   constraints:
     description:
     - Additional constraints for the product
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   description:
     description:
     - Detailed description of the product
+    - Used by I(state=['post'])
     type: str
   domainId:
     description:
     - Identifier of the domain that advertises the product
+    - Used by I(state=['post'])
     type: str
   id:
     description:
     - Unique identifier of the product (ignored during create request)
+    - Used by I(state=['post'])
     type: str
   includeInactive:
     description:
     - If false, returns only products that are actively offered; if true, returns
       all products
+    - Used by I(state=['get', 'head'])
     type: bool
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   pageToken:
     description:
@@ -74,24 +83,29 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   providerData:
     description:
     - Provider custom data
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerProductId:
     description:
     - Identifier within the provider's context or scope for the product
+    - Used by I(state=['post'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   resourceTypeId:
     description:
     - The type of resource provided by the product
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -103,6 +117,7 @@ options:
   title:
     description:
     - Name or title describing the product
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

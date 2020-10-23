@@ -10,6 +10,8 @@ OPTIONS (= is mandatory):
 
 - typeArtifactUri
         Identifier of the type artifact being queried
+        Required with `state=['get', 'head']'
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 

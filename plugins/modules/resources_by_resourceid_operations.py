@@ -31,34 +31,41 @@ options:
     - 'Only delete operations before the given date. For example: ''2020-02-12'' would
       delete any operations before Feb 2nd, 2020. If no date is specified, it will
       delete all completed operations.'
+    - Used by I(state=['delete'])
     type: str
   description:
     description:
     - Description of the operation
+    - Used by I(state=['post'])
     type: str
   inputs:
     description:
     - Inputs of the operation
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   interface:
     description:
     - ID of the interface
+    - Used by I(state=['post'])
     type: str
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   pageToken:
     description:
@@ -67,20 +74,25 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   resourceId:
     description:
     - Identifier of the resource for whom the operation is being created
+    - Required with I(state=['delete', 'get', 'head', 'post'])
+    - Used by I(state=['delete', 'get', 'head', 'post'])
     type: str
   resourceStateConstraints:
     description:
     - Constraints of the resource state for this operation to execute
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   state:
     choices:
@@ -93,6 +105,7 @@ options:
   title:
     description:
     - Title of the operation
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

@@ -29,26 +29,33 @@ options:
   deletableBySubTenants:
     description:
     - Whether subject is deletable by subtenants if shared
+    - Used by I(state=['patch', 'put'])
     type: bool
   description:
     description:
     - Description of the permission
+    - Used by I(state=['patch', 'put'])
     type: str
   id:
     description:
     - Unique id of the permission
+    - Used by I(state=['patch', 'put'])
     type: str
   isBuiltIn:
     description:
     - Whether this is a built-in permission
+    - Used by I(state=['patch', 'put'])
     type: bool
   label:
     description:
     - Label of the permission
+    - Used by I(state=['patch', 'put'])
     type: str
   sharingPermissionId:
     description:
     - Identifier of the sharing permission to update
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   state:
     choices:
@@ -62,10 +69,12 @@ options:
   updatableBySubTenants:
     description:
     - Whether subject is updatable by subtenants if shared
+    - Used by I(state=['patch', 'put'])
     type: bool
   visibleToSubTenants:
     description:
     - Whether subject is visible to subtenants if shared
+    - Used by I(state=['patch', 'put'])
     type: bool
 author: []
 version_added: 1.0.0

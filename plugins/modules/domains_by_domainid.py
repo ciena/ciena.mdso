@@ -29,6 +29,7 @@ options:
   accessUrl:
     description:
     - Access URL to the domain
+    - Used by I(state=['patch', 'put'])
     type: str
   address:
     description:
@@ -41,61 +42,76 @@ options:
     - ' - C(state) (str): State/province'
     - ' - C(street) (str): Street'
     - ' - C(zip) (str): Postal/zip code'
+    - Used by I(state=['patch', 'put'])
     type: dict
   connectionStatus:
     description:
     - Connection status of the domain
+    - Used by I(state=['patch', 'put'])
     type: dict
   description:
     description:
     - Detailed description
+    - Used by I(state=['patch', 'put'])
     type: str
   domainId:
     description:
     - Identifier of the domain being queried
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   domainType:
     description:
     - Type of the domain
+    - Used by I(state=['patch', 'put'])
     type: str
   id:
     description:
     - Unique id of the domain
+    - Used by I(state=['patch', 'put'])
     type: str
   initialDiscoveryStatus:
     description:
     - Initial Discovery status of the domain
+    - Used by I(state=['patch', 'put'])
     type: dict
   lastConnected:
     description:
     - Last time domain was connected to southbound
+    - Used by I(state=['patch', 'put'])
     type: str
   obfuscate:
     description:
     - If true, schema obfuscated values will be replaced with a fixed string in the
       response.
+    - Used by I(state=['get', 'head', 'patch', 'put'])
     type: bool
   onlyEnableTypes:
     description:
     - When non-empty, only enable these resource types in the domain
+    - Used by I(state=['patch', 'put'])
     type: list
   operationMode:
     description:
     - Operation mode of this domain
+    - Used by I(state=['patch', 'put'])
     type: str
   properties:
     description:
     - Properties the domain
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   reason:
     description:
     - Reason message for connection failure
+    - Used by I(state=['patch', 'put'])
     type: str
   rpId:
     description:
     - Resource provider that creates this domain
+    - Used by I(state=['patch', 'put'])
     type: str
   state:
     choices:
@@ -109,10 +125,12 @@ options:
   tenantId:
     description:
     - Orchestrator tenant
+    - Used by I(state=['patch', 'put'])
     type: str
   title:
     description:
     - Descriptive name/title of domain
+    - Used by I(state=['patch', 'put'])
     type: str
 author: []
 version_added: 1.0.0

@@ -29,6 +29,8 @@ options:
   applicationSliceId:
     description:
     - Identifies the application slice for which subdomains are to be added
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -36,7 +38,9 @@ options:
     description: []
     type: str
   subDomains:
-    description: []
+    description:
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: list
 author: []
 version_added: 1.0.0

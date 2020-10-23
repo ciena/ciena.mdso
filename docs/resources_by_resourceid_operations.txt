@@ -9,11 +9,13 @@ OPTIONS (= is mandatory):
         '2020-02-12' would delete any operations before Feb 2nd, 2020.
         If no date is specified, it will delete all completed
         operations.
+        Used by `state=['delete']'
         [Default: (null)]
         type: str
 
 - description
         Description of the operation
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
@@ -21,29 +23,34 @@ OPTIONS (= is mandatory):
         Inputs of the operation
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['post']'
         [Default: (null)]
         type: dict
 
 - interface
         ID of the interface
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - limit
         The maximum number of elements to return in a single paged
         request
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - offset
         Requested offset within the total result set to be the first
         element in the paged response
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - p
         Optional query parameter to define a partial string match
         filter using property:value syntax
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
@@ -53,18 +60,22 @@ OPTIONS (= is mandatory):
         subsequent request for a page of results. The token includes
         the limit and offset parameters for the next page, but one or
         both can be included to override the encoded values
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - q
         Optional query parameter to define a query filter using
         property:value syntax
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - resourceId
         Identifier of the resource for whom the operation is being
         created
+        Required with `state=['delete', 'get', 'head', 'post']'
+        Used by `state=['delete', 'get', 'head', 'post']'
         [Default: (null)]
         type: str
 
@@ -73,6 +84,7 @@ OPTIONS (= is mandatory):
         execute
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['post']'
         [Default: (null)]
         type: dict
 
@@ -82,6 +94,7 @@ OPTIONS (= is mandatory):
 
 - title
         Title of the operation
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 

@@ -29,10 +29,13 @@ options:
   full:
     description:
     - Whether the requeset is for a full resync
+    - Used by I(state=['post'])
     type: bool
   resourceId:
     description:
     - Identifier of the resource to be resynced
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   state:
     choices:

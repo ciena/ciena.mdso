@@ -29,14 +29,17 @@ options:
   description:
     description:
     - Description of the meaning of a tag value
+    - Used by I(state=['post'])
     type: str
   key:
     description:
     - Tag key
+    - Used by I(state=['post'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:
@@ -48,10 +51,13 @@ options:
   tagKey:
     description:
     - Tag key whose tag values are being requested
+    - Required with I(state=['get', 'head', 'post'])
+    - Used by I(state=['get', 'head', 'post'])
     type: str
   value:
     description:
     - Tag value
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

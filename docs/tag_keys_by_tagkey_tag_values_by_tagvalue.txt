@@ -7,11 +7,13 @@ OPTIONS (= is mandatory):
 
 - description
         Description of the meaning of a tag value
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - key
         Tag key
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -21,16 +23,23 @@ OPTIONS (= is mandatory):
 
 - tagKey
         Tag key whose tag value is being requested
+        Required with `state=['delete', 'get', 'head', 'patch',
+        'put']'
+        Used by `state=['delete', 'get', 'head', 'patch', 'put']'
         [Default: (null)]
         type: str
 
 - tagValue
         Tag value being updated
+        Required with `state=['delete', 'get', 'head', 'patch',
+        'put']'
+        Used by `state=['delete', 'get', 'head', 'patch', 'put']'
         [Default: (null)]
         type: str
 
 - value
         Tag value
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 

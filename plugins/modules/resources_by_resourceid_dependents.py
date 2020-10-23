@@ -29,35 +29,42 @@ options:
   applicationSliceId:
     description:
     - Optional query to limit resources by the application slice id.
+    - Used by I(state=['get', 'head'])
     type: str
   domainId:
     description:
     - Optional query to limit resources by domain
+    - Used by I(state=['get', 'head'])
     type: str
   exactTypeId:
     description:
     - Optional query to limit resources by one or more exact resource types (takes
       precedence over resourceTypeId). Use a comma-separated string to specify multiple
       resource types.
+    - Used by I(state=['get', 'head'])
     type: str
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   obfuscate:
     description:
     - If true, schema obfuscated values will be replaced with a fixed string in the
       response.
+    - Used by I(state=['get', 'head'])
     type: bool
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   pageToken:
     description:
@@ -66,32 +73,40 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   productId:
     description:
     - Optional query to limit resources by product type
+    - Used by I(state=['get', 'head'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   recursive:
     description:
     - If true, returns indirect dependents as well, i.e., dependents of the dependents,
       etc.
+    - Used by I(state=['get', 'head'])
     type: bool
   resourceId:
     description:
     - Identifies the resource for which dependent resources are searched
+    - Required with I(state=['get', 'head'])
+    - Used by I(state=['get', 'head'])
     type: str
   resourceProviderId:
     description:
     - Optional query to limit resources by resource provider
+    - Used by I(state=['get', 'head'])
     type: str
   resourceTypeId:
     description:
     - Optional query to limit resources by one or more resource types. Use a comma-separated
       string to specify multiple resource types.
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:
@@ -103,10 +118,12 @@ options:
     description:
     - Optional query to limit resources by one or more subdomain ids. Use a comma-separated
       string to specify multiple subdomain ids.
+    - Used by I(state=['get', 'head'])
     type: str
   tags:
     description:
     - Optional query parameter to define a tag filter using tagKey:tagValue syntax
+    - Used by I(state=['get', 'head'])
     type: str
 author: []
 version_added: 1.0.0

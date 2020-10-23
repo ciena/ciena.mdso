@@ -29,18 +29,22 @@ options:
   afterJobId:
     description:
     - The last jobId of the page preceding the desired page
+    - Used by I(state=['get', 'head'])
     type: str
   maxCount:
     description:
     - Maximum number of jobs to return in a page
+    - Used by I(state=['get', 'head'])
     type: int
   maxWait:
     description:
     - Maximum wait time in milliseconds before returning results
+    - Used by I(state=['get', 'head'])
     type: int
   minCount:
     description:
     - Minimum number of jobs to return (unless maxWait is exceeded)
+    - Used by I(state=['get', 'head'])
     type: int
   state:
     choices:
@@ -51,6 +55,8 @@ options:
   type:
     description:
     - Job type
+    - Required with I(state=['get', 'head'])
+    - Used by I(state=['get', 'head'])
     type: str
 author: []
 version_added: 1.0.0

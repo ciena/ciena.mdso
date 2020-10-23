@@ -29,50 +29,62 @@ options:
   applicationSlices:
     description:
     - Set of application slices this sub-domain is in
+    - Used by I(state=['patch', 'put'])
     type: list
   assignable:
     description:
     - Whether the sub-domain can be re-assigned
+    - Used by I(state=['patch', 'put'])
     type: bool
   decomposable:
     description:
     - Whether the sub-domain can be decomposed
+    - Used by I(state=['patch', 'put'])
     type: bool
   description:
     description:
     - Description of the sub-domain
+    - Used by I(state=['patch', 'put'])
     type: str
   domainId:
     description:
     - ID of the domain this sub-domain belongs to
+    - Used by I(state=['patch', 'put'])
     type: str
   extendedApplicationSlices:
     description:
     - Set of application slices for which this sub-domain acts as an extended sub-domain
+    - Used by I(state=['patch', 'put'])
     type: list
   id:
     description:
     - Unique ID of the sub-domain
+    - Used by I(state=['patch', 'put'])
     type: str
   isDefault:
     description:
     - Whether this sub-domain is its domain's default sub-domain
+    - Used by I(state=['patch', 'put'])
     type: bool
   name:
     description:
     - Name of the sub-domain
+    - Used by I(state=['patch', 'put'])
     type: str
   ownerTenantId:
     description:
     - The ID of the owner tenant
+    - Used by I(state=['patch', 'put'])
     type: str
   parentId:
     description:
     - The ID of the container sub-domain, if applicable
+    - Used by I(state=['patch', 'put'])
     type: str
   scope:
     description:
     - Scope of the sub-domain
+    - Used by I(state=['patch', 'put'])
     type: str
   state:
     choices:
@@ -86,6 +98,8 @@ options:
   subDomainId:
     description:
     - Identifier of the subdomain to update
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
 author: []
 version_added: 1.0.0

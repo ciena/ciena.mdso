@@ -7,11 +7,14 @@ OPTIONS (= is mandatory):
 
 - description
         Description of the operation
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - full
         Whether the request body represents a full resource operation
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: bool
 
@@ -19,17 +22,21 @@ OPTIONS (= is mandatory):
         Inputs of the operation
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['post']'
         [Default: (null)]
         type: dict
 
 - interface
         ID of the interface
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - resourceId
         Identifier of the resource for which the operation will be
         created against
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
@@ -38,6 +45,7 @@ OPTIONS (= is mandatory):
         execute
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['post']'
         [Default: (null)]
         type: dict
 
@@ -47,6 +55,7 @@ OPTIONS (= is mandatory):
 
 - title
         Title of the operation
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 

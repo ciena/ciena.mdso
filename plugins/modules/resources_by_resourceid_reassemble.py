@@ -29,6 +29,8 @@ options:
   resourceId:
     description:
     - Identifier of the resource who needs to be reassembled
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   state:
     choices:

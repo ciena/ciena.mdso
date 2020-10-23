@@ -29,10 +29,12 @@ options:
   description:
     description:
     - Description of the meaning of a tag value
+    - Used by I(state=['patch', 'put'])
     type: str
   key:
     description:
     - Tag key
+    - Used by I(state=['patch', 'put'])
     type: str
   state:
     choices:
@@ -46,14 +48,19 @@ options:
   tagKey:
     description:
     - Tag key whose tag value is being requested
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   tagValue:
     description:
     - Tag value being updated
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   value:
     description:
     - Tag value
+    - Used by I(state=['patch', 'put'])
     type: str
 author: []
 version_added: 1.0.0

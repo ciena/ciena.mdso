@@ -29,6 +29,7 @@ options:
   accessUrl:
     description:
     - Access URL to the domain
+    - Used by I(state=['post'])
     type: str
   address:
     description:
@@ -41,32 +42,40 @@ options:
     - ' - C(state) (str): State/province'
     - ' - C(street) (str): Street'
     - ' - C(zip) (str): Postal/zip code'
+    - Used by I(state=['post'])
     type: dict
   description:
     description:
     - Detailed description
+    - Used by I(state=['post'])
     type: str
   full:
     description:
     - Whether to perform a full validation request
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: bool
   onlyEnableTypes:
     description:
     - When non-empty, only enable these resource types in the domain
+    - Used by I(state=['post'])
     type: list
   operationMode:
     description:
     - Operation mode of this domain
+    - Used by I(state=['post'])
     type: str
   properties:
     description:
     - Properties the domain
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   rpId:
     description:
     - Resource provider managing this domain
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -76,10 +85,12 @@ options:
   tenantId:
     description:
     - Orchestrator tenant ID for the domain owner (if unspecified defaults to requester)
+    - Used by I(state=['post'])
     type: str
   title:
     description:
     - Descriptive name/title of domain
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

@@ -35,6 +35,8 @@ options:
   typeArtifactUri:
     description:
     - Identifier of the type artifact being queried
+    - Required with I(state=['get', 'head'])
+    - Used by I(state=['get', 'head'])
     type: str
 author: []
 version_added: 1.0.0

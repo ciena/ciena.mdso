@@ -8,11 +8,13 @@ OPTIONS (= is mandatory):
 - asyncProtocolVersion
         Identifies the async protocol version supported by the
         resource provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - description
         Description of the resource provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -31,21 +33,25 @@ OPTIONS (= is mandatory):
         inter-call interval bpocore should honor when upserting the
         Domain
          - `rpType' (dict): Specifies the RP Type
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - domainType
         Type of domain managed by the resource provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - id
         Unique identifier to address the resource provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - lastUpsertTime
         Last time the resource provider is upserted in the database
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -53,33 +59,41 @@ OPTIONS (= is mandatory):
         Properties of the resource provider
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - protocolVersion
         Identifies the protocol version supported by the resource
         provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - providerId
         Identifier of the resource provider in provider's context
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - relationships
         Settings to declare how relationships should be identified for
         resource types managed by this resource provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: list
 
 - resourceProviderId
         Identifier of the resource provider to update
+        Required with `state=['delete', 'get', 'head', 'patch',
+        'put']'
+        Used by `state=['delete', 'get', 'head', 'patch', 'put']'
         [Default: (null)]
         type: str
 
 - resourceTypes
         List of resource types managed by the resource provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: list
 
@@ -89,11 +103,13 @@ OPTIONS (= is mandatory):
 
 - title
         Name of the resource provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - uri
         Address to contact the resource provider
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 

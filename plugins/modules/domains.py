@@ -29,6 +29,7 @@ options:
   accessUrl:
     description:
     - Access URL to the domain
+    - Used by I(state=['post'])
     type: str
   address:
     description:
@@ -41,37 +42,45 @@ options:
     - ' - C(state) (str): State/province'
     - ' - C(street) (str): Street'
     - ' - C(zip) (str): Postal/zip code'
+    - Used by I(state=['post'])
     type: dict
   description:
     description:
     - Detailed description
+    - Used by I(state=['post'])
     type: str
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   obfuscate:
     description:
     - If true, schema obfuscated values will be replaced with a fixed string in the
       response.
+    - Used by I(state=['get', 'head', 'post'])
     type: bool
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   onlyEnableTypes:
     description:
     - When non-empty, only enable these resource types in the domain
+    - Used by I(state=['post'])
     type: list
   operationMode:
     description:
     - Operation mode of this domain
+    - Used by I(state=['post'])
     type: str
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   pageToken:
     description:
@@ -80,20 +89,24 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   properties:
     description:
     - Properties the domain
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   rpId:
     description:
     - Resource provider managing this domain
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -105,14 +118,17 @@ options:
   tenantId:
     description:
     - Orchestrator tenant ID for the domain owner (if unspecified defaults to requester)
+    - Used by I(state=['post'])
     type: str
   title:
     description:
     - Descriptive name/title of domain
+    - Used by I(state=['post'])
     type: str
   validate:
     description:
     - Whether to use a custom validator
+    - Used by I(state=['post'])
     type: bool
 author: []
 version_added: 1.0.0

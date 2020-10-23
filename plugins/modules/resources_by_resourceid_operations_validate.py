@@ -29,30 +29,38 @@ options:
   description:
     description:
     - Description of the operation
+    - Used by I(state=['post'])
     type: str
   full:
     description:
     - Whether the request body represents a full resource operation
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: bool
   inputs:
     description:
     - Inputs of the operation
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   interface:
     description:
     - ID of the interface
+    - Used by I(state=['post'])
     type: str
   resourceId:
     description:
     - Identifier of the resource for which the operation will be created against
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   resourceStateConstraints:
     description:
     - Constraints of the resource state for this operation to execute
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   state:
     choices:
@@ -62,6 +70,7 @@ options:
   title:
     description:
     - Title of the operation
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

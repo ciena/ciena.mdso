@@ -29,6 +29,8 @@ options:
   resyncId:
     description:
     - ID of the resync being requested
+    - Required with I(state=['get', 'head'])
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:

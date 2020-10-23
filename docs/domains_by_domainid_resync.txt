@@ -6,11 +6,14 @@ OPTIONS (= is mandatory):
 
 - domainId
         Identifier of the domain to be resynced
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - full
         Whether the requeset is for a full resync
+        Used by `state=['post']'
         [Default: (null)]
         type: bool
 

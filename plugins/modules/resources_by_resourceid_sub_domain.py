@@ -29,6 +29,8 @@ options:
   resourceId:
     description:
     - Identifier of the resource to be assigned to the subdomain
+    - Required with I(state=['put'])
+    - Used by I(state=['put'])
     type: str
   state:
     choices:
@@ -38,6 +40,7 @@ options:
   subDomainId:
     description:
     - The ID of the sub-domain
+    - Used by I(state=['put'])
     type: str
 author: []
 version_added: 1.0.0

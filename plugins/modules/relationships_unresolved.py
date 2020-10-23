@@ -29,11 +29,13 @@ options:
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   pageToken:
     description:
@@ -42,14 +44,17 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   resourceId:
     description:
     - Identifier of the resource whose unresolved relationships to be listed
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:
@@ -133,8 +138,10 @@ async def main():
 
 
 def url(params):
-    return "https://{mdso_hostname}/bpocore/market/api/v1/relationships/unresolved".format(
-        **params
+    return (
+        "https://{mdso_hostname}/bpocore/market/api/v1/relationships/unresolved".format(
+            **params
+        )
     )
 
 
@@ -144,10 +151,11 @@ async def entry_point(module, session):
 
 
 async def _get(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/relationships/unresolved".format(
-        **params
-    ) + gen_args(
-        params, IN_QUERY_PARAMETER
+    _url = (
+        "https://{mdso_hostname}/bpocore/market/api/v1/relationships/unresolved".format(
+            **params
+        )
+        + gen_args(params, IN_QUERY_PARAMETER)
     )
     async with session.get(_url) as resp:
         content_types = [
@@ -166,10 +174,11 @@ async def _get(params, session):
 
 
 async def _head(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/relationships/unresolved".format(
-        **params
-    ) + gen_args(
-        params, IN_QUERY_PARAMETER
+    _url = (
+        "https://{mdso_hostname}/bpocore/market/api/v1/relationships/unresolved".format(
+            **params
+        )
+        + gen_args(params, IN_QUERY_PARAMETER)
     )
     async with session.head(_url) as resp:
         content_types = [

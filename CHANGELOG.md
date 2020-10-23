@@ -1,5 +1,11 @@
 # Ciena MDSO Release Notes
 
+## 1.1.4
+
+### Fix
+
+- Better python module docs
+
 ## 1.1.3
 
 ### Fix

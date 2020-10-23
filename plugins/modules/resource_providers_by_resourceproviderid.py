@@ -29,10 +29,12 @@ options:
   asyncProtocolVersion:
     description:
     - Identifies the async protocol version supported by the resource provider
+    - Used by I(state=['patch', 'put'])
     type: str
   description:
     description:
     - Description of the resource provider
+    - Used by I(state=['patch', 'put'])
     type: str
   domainSettings:
     description:
@@ -49,45 +51,56 @@ options:
     - ' - C(minInterUpsertIntervalMs) (number): Specifies the minimal inter-call interval
       bpocore should honor when upserting the Domain'
     - ' - C(rpType) (dict): Specifies the RP Type'
+    - Used by I(state=['patch', 'put'])
     type: dict
   domainType:
     description:
     - Type of domain managed by the resource provider
+    - Used by I(state=['patch', 'put'])
     type: str
   id:
     description:
     - Unique identifier to address the resource provider
+    - Used by I(state=['patch', 'put'])
     type: str
   lastUpsertTime:
     description:
     - Last time the resource provider is upserted in the database
+    - Used by I(state=['patch', 'put'])
     type: str
   properties:
     description:
     - Properties of the resource provider
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   protocolVersion:
     description:
     - Identifies the protocol version supported by the resource provider
+    - Used by I(state=['patch', 'put'])
     type: str
   providerId:
     description:
     - Identifier of the resource provider in provider's context
+    - Used by I(state=['patch', 'put'])
     type: str
   relationships:
     description:
     - Settings to declare how relationships should be identified for resource types
       managed by this resource provider
+    - Used by I(state=['patch', 'put'])
     type: list
   resourceProviderId:
     description:
     - Identifier of the resource provider to update
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   resourceTypes:
     description:
     - List of resource types managed by the resource provider
+    - Used by I(state=['patch', 'put'])
     type: list
   state:
     choices:
@@ -101,10 +114,12 @@ options:
   title:
     description:
     - Name of the resource provider
+    - Used by I(state=['patch', 'put'])
     type: str
   uri:
     description:
     - Address to contact the resource provider
+    - Used by I(state=['patch', 'put'])
     type: str
 author: []
 version_added: 1.0.0

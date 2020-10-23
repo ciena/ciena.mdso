@@ -29,10 +29,13 @@ options:
   domainId:
     description:
     - Identifier of the domain to be resynced
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   full:
     description:
     - Whether the requeset is for a full resync
+    - Used by I(state=['post'])
     type: bool
   state:
     choices:

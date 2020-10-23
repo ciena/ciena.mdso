@@ -6,6 +6,8 @@ OPTIONS (= is mandatory):
 
 - relationshipId
         Identifier of the relationship being queried
+        Required with `state=['delete', 'get', 'head']'
+        Used by `state=['delete', 'get', 'head']'
         [Default: (null)]
         type: str
 

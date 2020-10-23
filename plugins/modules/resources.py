@@ -29,67 +29,82 @@ options:
   applicationSliceId:
     description:
     - Optional query to limit resources by the application slice id.
+    - Used by I(state=['get', 'head'])
     type: str
   autoClean:
     description:
     - Free up any resources automatically upon any activation failure
+    - Used by I(state=['post'])
     type: bool
   description:
     description:
     - Detailed description of this resource
+    - Used by I(state=['post'])
     type: str
   desiredOrchState:
     description:
     - Desired orchestration state
+    - Used by I(state=['post'])
     type: str
   discovered:
     description:
     - Is this resource discovered
+    - Used by I(state=['post'])
     type: bool
   domainId:
     description:
     - Optional query to limit resources by domain
+    - Used by I(state=['get', 'head'])
     type: str
   exactTypeId:
     description:
     - Optional query to limit resources by one or more exact resource types (takes
       precedence over resourceTypeId). Use a comma-separated string to specify multiple
       resource types.
+    - Used by I(state=['get', 'head'])
     type: str
   label:
     description:
     - Textual label
+    - Used by I(state=['post'])
     type: str
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   nativeState:
     description:
     - Native (type specific) state
+    - Used by I(state=['post'])
     type: str
   obfuscate:
     description:
     - If true, schema obfuscated values will be replaced with a fixed string in the
       response.
+    - Used by I(state=['get', 'head', 'post'])
     type: bool
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   orchState:
     description:
     - Current state of the resource in the orchestrator
+    - Used by I(state=['post'])
     type: str
   orderId:
     description:
     - If applicable, the order containing this resource
+    - Used by I(state=['post'])
     type: str
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   pageToken:
     description:
@@ -98,51 +113,62 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   productId:
     description:
     - Optional query to limit resources by product type
+    - Used by I(state=['get', 'head', 'post'])
     type: str
   properties:
     description:
     - Properties
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerData:
     description:
     - Provider custom data
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerResourceId:
     description:
     - Optional query to identify resource by provider resource ID
+    - Used by I(state=['get', 'head', 'post'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   reason:
     description:
     - Reason for the orchestration state
+    - Used by I(state=['post'])
     type: str
   resourceProviderId:
     description:
     - Optional query to limit resources by resource provider
+    - Used by I(state=['get', 'head'])
     type: str
   resourceTypeId:
     description:
     - Optional query to limit resources by one or more resource types. Use a comma-separated
       string to specify multiple resource types.
+    - Used by I(state=['get', 'head'])
     type: str
   shared:
     description:
     - Is resource shared?
+    - Used by I(state=['post'])
     type: bool
   sharingPermissionId:
     description:
     - The sharing permission of the resource
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -155,17 +181,20 @@ options:
     description:
     - Optional query to limit resources by one or more subdomain ids. Use a comma-separated
       string to specify multiple subdomain ids.
+    - Used by I(state=['get', 'head', 'post'])
     type: str
   tags:
     description:
     - Optional query parameter to define a tag filter. May use whitespace-separated
       AND/OR query (e.g. (one:1) OR (two:2) AND (three:3)) syntax or tagKey:tagValue
       syntax
+    - Used by I(state=['get', 'head', 'post'])
     type: str
   validate:
     description:
     - Whether to perform custom validation in addition to built-in schema and accessor
       validations
+    - Used by I(state=['post'])
     type: bool
 author: []
 version_added: 1.0.0

@@ -7,16 +7,20 @@ OPTIONS (= is mandatory):
 - capabilities
         Array of strings that expresses the capabilities supported by
         the job executor
+        Used by `state=['post']'
         [Default: (null)]
         type: list
 
 - executorUrl
         URL that implements the Executor API for this job
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - jobId
         Identifier of the job to claim
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 

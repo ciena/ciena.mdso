@@ -29,6 +29,8 @@ options:
   resourceId:
     description:
     - Identifier of the resource to be audited
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   state:
     choices:

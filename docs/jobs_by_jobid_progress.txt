@@ -6,11 +6,14 @@ OPTIONS (= is mandatory):
 
 - jobId
         Identifier of the job whose execution is in progress
+        Required with `state=['put']'
+        Used by `state=['put']'
         [Default: (null)]
         type: str
 
 - progress
         Value describing the execution progress
+        Used by `state=['put']'
         [Default: (null)]
         type: dict
 

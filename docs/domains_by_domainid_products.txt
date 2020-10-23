@@ -7,24 +7,29 @@ OPTIONS (= is mandatory):
 - domainId
         Identifier of the domain whose product offerings are being
         queried
+        Required with `state=['get', 'head']'
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - includeInactive
         If false, returns only products that are actively offered; if
         true, returns all products
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: bool
 
 - limit
         The maximum number of elements to return in a single paged
         request
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - offset
         Requested offset within the total result set to be the first
         element in the paged response
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
@@ -34,12 +39,14 @@ OPTIONS (= is mandatory):
         subsequent request for a page of results. The token includes
         the limit and offset parameters for the next page, but one or
         both can be included to override the encoded values
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - q
         Optional query parameter to define a query filter using
         property:value syntax
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 

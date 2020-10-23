@@ -6,17 +6,20 @@ OPTIONS (= is mandatory):
 
 - description
         Description of the meaning of a tag value
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - key
         Tag key
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - q
         Optional query parameter to define a query filter using
         property:value syntax
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
@@ -26,11 +29,14 @@ OPTIONS (= is mandatory):
 
 - tagKey
         Tag key whose tag values are being requested
+        Required with `state=['get', 'head', 'post']'
+        Used by `state=['get', 'head', 'post']'
         [Default: (null)]
         type: str
 
 - value
         Tag value
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 

@@ -29,27 +29,33 @@ options:
   deletableBySubTenants:
     description:
     - Whether subject is deletable by subtenants if shared
+    - Used by I(state=['post'])
     type: bool
   description:
     description:
     - Description of the permission
+    - Used by I(state=['post'])
     type: str
   id:
     description:
     - Unique id of the permission
+    - Used by I(state=['post'])
     type: str
   label:
     description:
     - Label of the permission
+    - Used by I(state=['post'])
     type: str
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   pageToken:
     description:
@@ -58,10 +64,12 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:
@@ -73,10 +81,12 @@ options:
   updatableBySubTenants:
     description:
     - Whether subject is updatable by subtenants if shared
+    - Used by I(state=['post'])
     type: bool
   visibleToSubTenants:
     description:
     - Whether subject is visible to subtenants if shared
+    - Used by I(state=['post'])
     type: bool
 author: []
 version_added: 1.0.0

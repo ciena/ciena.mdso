@@ -29,42 +29,52 @@ options:
   active:
     description:
     - State of the product (active or inactive)
+    - Used by I(state=['patch', 'put'])
     type: bool
   constraints:
     description:
     - Additional constraints for the product
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   description:
     description:
     - Detailed description of the product
+    - Used by I(state=['patch', 'put'])
     type: str
   domainId:
     description:
     - Identifier of the domain that advertises the product
+    - Used by I(state=['patch', 'put'])
     type: str
   id:
     description:
     - Unique identifier of the product (ignored during create request)
+    - Used by I(state=['patch', 'put'])
     type: str
   productId:
     description:
     - Identifier of the product being queried
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   providerData:
     description:
     - Provider custom data
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['patch', 'put'])
     type: dict
   providerProductId:
     description:
     - Identifier within the provider's context or scope for the product
+    - Used by I(state=['patch', 'put'])
     type: str
   resourceTypeId:
     description:
     - The type of resource provided by the product
+    - Used by I(state=['patch', 'put'])
     type: str
   state:
     choices:
@@ -78,6 +88,7 @@ options:
   title:
     description:
     - Name or title describing the product
+    - Used by I(state=['patch', 'put'])
     type: str
 author: []
 version_added: 1.0.0

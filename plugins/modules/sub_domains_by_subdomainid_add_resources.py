@@ -27,7 +27,9 @@ short_description: Handle resource of type sub_domains_by_subdomainid_add_resour
 description: Handle resource of type sub_domains_by_subdomainid_add_resources
 options:
   resources:
-    description: []
+    description:
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: list
   state:
     choices:
@@ -37,6 +39,8 @@ options:
   subDomainId:
     description:
     - Identifier of the subdomain to add the resources
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

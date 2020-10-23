@@ -7,21 +7,25 @@ OPTIONS (= is mandatory):
 
 - createdAt
         When the operation was created
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - description
         Description of the operation
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - executionGroup
         Execution group of the operation
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - id
         Unique identifier for the operation
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -29,11 +33,13 @@ OPTIONS (= is mandatory):
         Inputs of the operation
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - interface
         ID of the interface
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -42,11 +48,15 @@ OPTIONS (= is mandatory):
         than or equal to minRevision. Respond with a 503 if the
         resource exists, but the revision does not meet the
         minRevision
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - operationId
-        Identifier of the operation to be patched
+        Identifier of the operation to be updated
+        Required with `state=['delete', 'get', 'head', 'patch',
+        'put']'
+        Used by `state=['delete', 'get', 'head', 'patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -54,6 +64,7 @@ OPTIONS (= is mandatory):
         Outputs of the operation
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
@@ -62,6 +73,7 @@ OPTIONS (= is mandatory):
         has made
         Validate attributes are:
          - `arr' (list):
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
@@ -69,16 +81,19 @@ OPTIONS (= is mandatory):
         Provider custom data
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - reason
         Reason for the operation state
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - resourceId
-        Identifier of the resource whose operations will be changed
+        Identifier of the resource whose operations will be queried
+        Used by `state=['delete', 'get', 'head', 'patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -87,11 +102,13 @@ OPTIONS (= is mandatory):
         execute
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - revision
         Strictly increasing revision number, incremented every update
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: int
 
@@ -101,11 +118,13 @@ OPTIONS (= is mandatory):
 
 - title
         Title of the operation
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - updatedAt
         When the operation was last updated
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 

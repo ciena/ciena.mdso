@@ -29,19 +29,23 @@ options:
   after:
     description:
     - Consider create/delete event since this time only
+    - Used by I(state=['get', 'head'])
     type: str
   before:
     description:
     - Consider create/delete event before this time only
+    - Used by I(state=['get', 'head'])
     type: str
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   pageToken:
     description:
@@ -50,10 +54,13 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   resourceId:
     description:
     - Identifier of the resource whose history will be queried
+    - Required with I(state=['get', 'head'])
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:

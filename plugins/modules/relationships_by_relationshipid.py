@@ -29,6 +29,8 @@ options:
   relationshipId:
     description:
     - Identifier of the relationship being queried
+    - Required with I(state=['delete', 'get', 'head'])
+    - Used by I(state=['delete', 'get', 'head'])
     type: str
   state:
     choices:

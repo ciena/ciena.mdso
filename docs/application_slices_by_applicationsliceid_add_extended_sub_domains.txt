@@ -8,6 +8,8 @@ OPTIONS (= is mandatory):
 - applicationSliceId
         Identifies the application slice for which extended subdomains
         are to be added
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
@@ -16,6 +18,8 @@ OPTIONS (= is mandatory):
         type: str
 
 - subDomains
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: list
 

@@ -29,91 +29,113 @@ options:
   autoClean:
     description:
     - Free up any resources automatically upon any activation failure
+    - Used by I(state=['post'])
     type: bool
   createdAt:
     description:
     - Time of creation
+    - Used by I(state=['post'])
     type: str
   description:
     description:
     - Detailed description of this resource
+    - Used by I(state=['post'])
     type: str
   desiredOrchState:
     description:
     - Desired orchestration state
+    - Used by I(state=['post'])
     type: str
   differences:
     description:
     - Differences represent the difference between desired and observed state
+    - Used by I(state=['post'])
     type: list
   discovered:
     description:
     - Is this resource discovered
+    - Used by I(state=['post'])
     type: bool
   id:
     description:
     - Unique identifier for the resource (optional/ignored on calls to create)
+    - Used by I(state=['post'])
     type: str
   label:
     description:
     - Textual label
+    - Used by I(state=['post'])
     type: str
   nativeState:
     description:
     - Native (type specific) state
+    - Used by I(state=['post'])
     type: str
   orchState:
     description:
     - Current state of the resource in the orchestrator
+    - Used by I(state=['post'])
     type: str
   orderId:
     description:
     - If applicable, the order containing this resource
+    - Used by I(state=['post'])
     type: str
   productId:
     description:
     - The type of product for this resource
+    - Used by I(state=['post'])
     type: str
   properties:
     description:
     - Properties
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerData:
     description:
     - Provider custom data
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerResourceId:
     description:
     - Identifier of the resource in provider's context
+    - Used by I(state=['post'])
     type: str
   reason:
     description:
     - Reason for the orchestration state
+    - Used by I(state=['post'])
     type: str
   resourceId:
     description:
     - Identifier of the resource to promote
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   resourceTypeId:
     description:
     - The type of this resource
+    - Used by I(state=['post'])
     type: str
   revision:
     description:
     - Strictly increasing revision number, incremented every update including observed
       update
+    - Used by I(state=['post'])
     type: int
   shared:
     description:
     - Is resource shared?
+    - Used by I(state=['post'])
     type: bool
   sharingPermissionId:
     description:
     - The sharing permission associated with the resource
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -123,30 +145,37 @@ options:
   subDomainId:
     description:
     - Identifier of the resource's sub-domain
+    - Used by I(state=['post'])
     type: str
   tags:
     description:
     - Tags
+    - Used by I(state=['post'])
     type: dict
   tenantId:
     description:
     - Owner tenant of the resource?
+    - Used by I(state=['post'])
     type: str
   updateCount:
     description:
     - Monotonically increasing count of updates applied to this resource
+    - Used by I(state=['post'])
     type: int
   updateReason:
     description:
     - Reason for the update state
+    - Used by I(state=['post'])
     type: str
   updateState:
     description:
     - Current state of updating the resource, or `unset`
+    - Used by I(state=['post'])
     type: str
   updatedAt:
     description:
     - Time of last update
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

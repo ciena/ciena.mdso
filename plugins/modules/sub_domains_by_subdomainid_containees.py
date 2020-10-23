@@ -29,16 +29,19 @@ options:
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   pageToken:
     description:
@@ -47,15 +50,18 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   recursive:
     description:
     - If true, returns indirect containee subdomains as well, i.e., containees of
       the containees, etc.
+    - Used by I(state=['get', 'head'])
     type: bool
   state:
     choices:
@@ -66,6 +72,8 @@ options:
   subDomainId:
     description:
     - Identifies the subdomain whose containee subdomains are to be listed
+    - Required with I(state=['get', 'head'])
+    - Used by I(state=['get', 'head'])
     type: str
 author: []
 version_added: 1.0.0

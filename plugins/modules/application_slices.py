@@ -29,40 +29,49 @@ options:
   description:
     description:
     - Description of the application slice
+    - Used by I(state=['post'])
     type: str
   extendable:
     description:
     - Whether the application slice is extendable
+    - Used by I(state=['post'])
     type: bool
   holderTenantId:
     description:
     - The id of the tenant holding the slice
+    - Used by I(state=['post'])
     type: str
   isDefault:
     description:
     - Whether the application slice is the default slice of the owner tenant
+    - Used by I(state=['post'])
     type: bool
   limit:
     description:
     - The maximum number of elements to return in a single paged request
+    - Used by I(state=['get', 'head'])
     type: int
   name:
     description:
     - Name of the application slice
+    - Used by I(state=['post'])
     type: str
   offset:
     description:
     - Requested offset within the total result set to be the first element in the
       paged response
+    - Used by I(state=['get', 'head'])
     type: int
   ownerTenantId:
     description:
     - The id of the tenant owning the slice
+    - Used by I(state=['post'])
     type: str
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['get', 'head'])
     type: str
   pageToken:
     description:
@@ -71,22 +80,27 @@ options:
     - subsequent request for a page of results. The token includes the limit and offset
       parameters for the next page, but one or
     - both can be included to override the encoded values
+    - Used by I(state=['get', 'head'])
     type: str
   parentId:
     description:
     - The id of the parent application slice
+    - Used by I(state=['post'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   requiredAppSlicesIds:
     description:
     - Application slices this slice depends on
+    - Used by I(state=['post'])
     type: list
   sliceRole:
     description:
     - Role of the application slice
+    - Used by I(state=['post'])
     type: dict
   state:
     choices:

@@ -6,6 +6,8 @@ OPTIONS (= is mandatory):
 
 - jobId
         Identifier of the job being queried
+        Required with `state=['get', 'head']'
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 

@@ -29,75 +29,93 @@ options:
   autoClean:
     description:
     - Free up any resources automatically upon any activation failure
+    - Used by I(state=['post'])
     type: bool
   custom:
     description:
     - Whether to perform custom validation in addition to built-in schema and accessor
       validations
+    - Used by I(state=['post'])
     type: bool
   description:
     description:
     - Detailed description of this resource
+    - Used by I(state=['post'])
     type: str
   desiredOrchState:
     description:
     - Desired orchestration state
+    - Used by I(state=['post'])
     type: str
   discovered:
     description:
     - Is this resource discovered
+    - Used by I(state=['post'])
     type: bool
   full:
     description:
     - Whether the request body represents a full resource
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: bool
   label:
     description:
     - Textual label
+    - Used by I(state=['post'])
     type: str
   nativeState:
     description:
     - Native (type specific) state
+    - Used by I(state=['post'])
     type: str
   orchState:
     description:
     - Current state of the resource in the orchestrator
+    - Used by I(state=['post'])
     type: str
   orderId:
     description:
     - If applicable, the order containing this resource
+    - Used by I(state=['post'])
     type: str
   productId:
     description:
     - The type of product for this resource
+    - Used by I(state=['post'])
     type: str
   properties:
     description:
     - Properties
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerData:
     description:
     - Provider custom data
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerResourceId:
     description:
     - Identifier of the resource in provider's context
+    - Used by I(state=['post'])
     type: str
   reason:
     description:
     - Reason for the orchestration state
+    - Used by I(state=['post'])
     type: str
   shared:
     description:
     - Is resource shared?
+    - Used by I(state=['post'])
     type: bool
   sharingPermissionId:
     description:
     - The sharing permission of the resource
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -107,10 +125,12 @@ options:
   subDomainId:
     description:
     - Sub-domain ID
+    - Used by I(state=['post'])
     type: str
   tags:
     description:
     - Tags
+    - Used by I(state=['post'])
     type: dict
 author: []
 version_added: 1.0.0

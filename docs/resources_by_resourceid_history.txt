@@ -6,23 +6,27 @@ OPTIONS (= is mandatory):
 
 - after
         Consider create/delete event since this time only
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - before
         Consider create/delete event before this time only
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - limit
         The maximum number of elements to return in a single paged
         request
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - offset
         Requested offset within the total result set to be the first
         element in the paged response
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
@@ -32,11 +36,14 @@ OPTIONS (= is mandatory):
         subsequent request for a page of results. The token includes
         the limit and offset parameters for the next page, but one or
         both can be included to override the encoded values
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - resourceId
         Identifier of the resource whose history will be queried
+        Required with `state=['get', 'head']'
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 

@@ -6,6 +6,8 @@ OPTIONS (= is mandatory):
 
 - resyncId
         ID of the resync being requested
+        Required with `state=['get', 'head']'
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 

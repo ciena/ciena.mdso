@@ -6,6 +6,7 @@ OPTIONS (= is mandatory):
 
 - accessUrl
         Access URL to the domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -19,57 +20,70 @@ OPTIONS (= is mandatory):
          - `state' (str): State/province
          - `street' (str): Street
          - `zip' (str): Postal/zip code
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - connectionStatus
         Connection status of the domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - description
         Detailed description
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - domainId
         Identifier of the domain being queried
+        Required with `state=['delete', 'get', 'head', 'patch',
+        'put']'
+        Used by `state=['delete', 'get', 'head', 'patch', 'put']'
         [Default: (null)]
         type: str
 
 - domainType
         Type of the domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - id
         Unique id of the domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - initialDiscoveryStatus
         Initial Discovery status of the domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - lastConnected
         Last time domain was connected to southbound
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - obfuscate
         If true, schema obfuscated values will be replaced with a
         fixed string in the response.
+        Used by `state=['get', 'head', 'patch', 'put']'
         [Default: (null)]
         type: bool
 
 - onlyEnableTypes
         When non-empty, only enable these resource types in the domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: list
 
 - operationMode
         Operation mode of this domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -77,16 +91,19 @@ OPTIONS (= is mandatory):
         Properties the domain
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: dict
 
 - reason
         Reason message for connection failure
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - rpId
         Resource provider that creates this domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
@@ -96,11 +113,13 @@ OPTIONS (= is mandatory):
 
 - tenantId
         Orchestrator tenant
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 
 - title
         Descriptive name/title of domain
+        Used by `state=['patch', 'put']'
         [Default: (null)]
         type: str
 

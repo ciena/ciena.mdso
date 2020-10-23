@@ -29,28 +29,34 @@ options:
   createdAt:
     description:
     - When the operation was created
+    - Used by I(state=['post'])
     type: str
   description:
     description:
     - Description of the operation
+    - Used by I(state=['post'])
     type: str
   executionGroup:
     description:
     - Execution group of the operation
+    - Used by I(state=['post'])
     type: str
   id:
     description:
     - Unique identifier for the operation
+    - Used by I(state=['post'])
     type: str
   inputs:
     description:
     - Inputs of the operation
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   interface:
     description:
     - ID of the interface
+    - Used by I(state=['post'])
     type: str
   method:
     choices:
@@ -58,46 +64,57 @@ options:
     - PUT
     description:
     - The HTTP method for the resource operation to be validated against
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   operationId:
     description:
     - Identifier of the operation to be changed
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   outputs:
     description:
     - Outputs of the operation
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   progress:
     description:
     - Describes any progress towards completion that the operation has made
     - 'Validate attributes are:'
     - ' - C(arr) (list): '
+    - Used by I(state=['post'])
     type: dict
   providerData:
     description:
     - Provider custom data
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   reason:
     description:
     - Reason for the operation state
+    - Used by I(state=['post'])
     type: str
   resourceId:
     description:
     - Identifier of the resource being validated against
+    - Used by I(state=['post'])
     type: str
   resourceStateConstraints:
     description:
     - Constraints of the resource state for this operation to execute
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['post'])
     type: dict
   revision:
     description:
     - Strictly increasing revision number, incremented every update
+    - Used by I(state=['post'])
     type: int
   state:
     choices:
@@ -107,10 +124,12 @@ options:
   title:
     description:
     - Title of the operation
+    - Used by I(state=['post'])
     type: str
   updatedAt:
     description:
     - When the operation was last updated
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

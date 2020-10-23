@@ -6,6 +6,7 @@ OPTIONS (= is mandatory):
 
 - accessUrl
         Access URL to the domain
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
@@ -19,45 +20,53 @@ OPTIONS (= is mandatory):
          - `state' (str): State/province
          - `street' (str): Street
          - `zip' (str): Postal/zip code
+        Used by `state=['post']'
         [Default: (null)]
         type: dict
 
 - description
         Detailed description
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - limit
         The maximum number of elements to return in a single paged
         request
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - obfuscate
         If true, schema obfuscated values will be replaced with a
         fixed string in the response.
+        Used by `state=['get', 'head', 'post']'
         [Default: (null)]
         type: bool
 
 - offset
         Requested offset within the total result set to be the first
         element in the paged response
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - onlyEnableTypes
         When non-empty, only enable these resource types in the domain
+        Used by `state=['post']'
         [Default: (null)]
         type: list
 
 - operationMode
         Operation mode of this domain
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - p
         Optional query parameter to define a partial string match
         filter using property:value syntax
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
@@ -67,6 +76,7 @@ OPTIONS (= is mandatory):
         subsequent request for a page of results. The token includes
         the limit and offset parameters for the next page, but one or
         both can be included to override the encoded values
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
@@ -74,17 +84,20 @@ OPTIONS (= is mandatory):
         Properties the domain
         Validate attributes are:
          - `obj' (list):
+        Used by `state=['post']'
         [Default: (null)]
         type: dict
 
 - q
         Optional query parameter to define a query filter using
         property:value syntax
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - rpId
         Resource provider managing this domain
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
@@ -95,16 +108,19 @@ OPTIONS (= is mandatory):
 - tenantId
         Orchestrator tenant ID for the domain owner (if unspecified
         defaults to requester)
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - title
         Descriptive name/title of domain
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 
 - validate
         Whether to use a custom validator
+        Used by `state=['post']'
         [Default: (null)]
         type: bool
 

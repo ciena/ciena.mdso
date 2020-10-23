@@ -29,18 +29,22 @@ options:
   autoIndexed:
     description:
     - Are tag value for this key auto-indexed?
+    - Used by I(state=['post'])
     type: bool
   description:
     description:
     - Textual description of tag key
+    - Used by I(state=['post'])
     type: str
   key:
     description:
     - Tag key
+    - Used by I(state=['post'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['get', 'head'])
     type: str
   state:
     choices:

@@ -29,14 +29,17 @@ options:
   autoIndexed:
     description:
     - Are tag value for this key auto-indexed?
+    - Used by I(state=['patch', 'put'])
     type: bool
   description:
     description:
     - Textual description of tag key
+    - Used by I(state=['patch', 'put'])
     type: str
   key:
     description:
     - Tag key
+    - Used by I(state=['patch', 'put'])
     type: str
   state:
     choices:
@@ -50,6 +53,8 @@ options:
   tagKey:
     description:
     - ' Requested tag key'
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
 author: []
 version_added: 1.0.0

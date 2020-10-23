@@ -29,10 +29,13 @@ options:
   jobId:
     description:
     - Identifier of the job whose execution is in progress
+    - Required with I(state=['put'])
+    - Used by I(state=['put'])
     type: str
   progress:
     description:
     - Value describing the execution progress
+    - Used by I(state=['put'])
     type: dict
   state:
     choices:

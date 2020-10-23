@@ -6,21 +6,25 @@ OPTIONS (= is mandatory):
 
 - afterJobId
         The last jobId of the page preceding the desired page
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 
 - maxCount
         Maximum number of jobs to return in a page
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - maxWait
         Maximum wait time in milliseconds before returning results
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
 - minCount
         Minimum number of jobs to return (unless maxWait is exceeded)
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: int
 
@@ -30,6 +34,8 @@ OPTIONS (= is mandatory):
 
 - type
         Job type
+        Required with `state=['get', 'head']'
+        Used by `state=['get', 'head']'
         [Default: (null)]
         type: str
 

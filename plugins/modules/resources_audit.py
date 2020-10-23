@@ -29,34 +29,41 @@ options:
   domainId:
     description:
     - Identifier of the domain whose resources should be audited
+    - Used by I(state=['post'])
     type: str
   exactTypeId:
     description:
     - Option to limit the audit to one or more resource types specified (takes precedence
       over resourceTypeId). Use a comma-separated string to specify multiple resource
       types.
+    - Used by I(state=['post'])
     type: str
   p:
     description:
     - Optional query parameter to define a partial string match filter using property:value
       syntax
+    - Used by I(state=['post'])
     type: str
   productId:
     description:
     - Identifier of the product whose resources should be audited
+    - Used by I(state=['post'])
     type: str
   q:
     description:
     - Optional query parameter to define a query filter using property:value syntax
+    - Used by I(state=['post'])
     type: str
   resourceProviderId:
     description:
     - Identifier of the provider whose resources should be audited
+    - Used by I(state=['post'])
     type: str
   resourceTypeId:
     description:
     - Option to limit the audit to one or more resource types specified and their
       derived types. Use a comma-separated string to specify multiple resource types.
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
@@ -66,6 +73,7 @@ options:
   tags:
     description:
     - Optional query parameter to define a tag filter using tagKey:tagValue syntax
+    - Used by I(state=['post'])
     type: str
 author: []
 version_added: 1.0.0

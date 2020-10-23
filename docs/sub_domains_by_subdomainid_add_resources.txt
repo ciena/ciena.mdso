@@ -6,6 +6,8 @@
 OPTIONS (= is mandatory):
 
 - resources
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: list
 
@@ -15,6 +17,8 @@ OPTIONS (= is mandatory):
 
 - subDomainId
         Identifier of the subdomain to add the resources
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 

@@ -29,20 +29,25 @@ options:
   _type:
     description:
     - Type of job result
+    - Used by I(state=['put'])
     type: str
   jobId:
     description:
     - Identifier of the job whose execution is complete
+    - Required with I(state=['put'])
+    - Used by I(state=['put'])
     type: str
   reason:
     description:
     - For JobFailure, a String description of the failure
+    - Used by I(state=['put'])
     type: str
   result:
     description:
     - For JobSuccess, a JSON object containing the job results
     - 'Validate attributes are:'
     - ' - C(obj) (list): '
+    - Used by I(state=['put'])
     type: dict
   state:
     choices:

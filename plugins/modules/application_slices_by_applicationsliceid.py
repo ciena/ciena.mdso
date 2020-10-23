@@ -29,46 +29,58 @@ options:
   applicationSliceId:
     description:
     - Identifier of the application slice to update
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
+    - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   description:
     description:
     - Description of the application slice
+    - Used by I(state=['patch', 'put'])
     type: str
   extendable:
     description:
     - Whether the application slice is extendable
+    - Used by I(state=['patch', 'put'])
     type: bool
   holderTenantId:
     description:
     - The id of the tenant holding the slice
+    - Used by I(state=['patch', 'put'])
     type: str
   id:
     description:
     - Unique ID of the application slice
+    - Used by I(state=['patch', 'put'])
     type: str
   isDefault:
     description:
     - Whether the application slice is the default slice of the owner tenant
+    - Used by I(state=['patch', 'put'])
     type: bool
   name:
     description:
     - Name of the application slice
+    - Used by I(state=['patch', 'put'])
     type: str
   ownerTenantId:
     description:
     - The id of the tenant owning the slice
+    - Used by I(state=['patch', 'put'])
     type: str
   parentId:
     description:
     - The id of the parent application slice
+    - Used by I(state=['patch', 'put'])
     type: str
   requiredAppSlicesIds:
     description:
     - Application slices this slice depends on
+    - Used by I(state=['patch', 'put'])
     type: list
   sliceRole:
     description:
     - Role of the application slice
+    - Used by I(state=['patch', 'put'])
     type: dict
   state:
     choices:

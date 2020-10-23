@@ -6,11 +6,14 @@ OPTIONS (= is mandatory):
 
 - full
         Whether the requeset is for a full resync
+        Used by `state=['post']'
         [Default: (null)]
         type: bool
 
 - resourceId
         Identifier of the resource to be resynced
+        Required with `state=['post']'
+        Used by `state=['post']'
         [Default: (null)]
         type: str
 

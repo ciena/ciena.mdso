@@ -29,14 +29,18 @@ options:
   capabilities:
     description:
     - Array of strings that expresses the capabilities supported by the job executor
+    - Used by I(state=['post'])
     type: list
   executorUrl:
     description:
     - URL that implements the Executor API for this job
+    - Used by I(state=['post'])
     type: str
   jobId:
     description:
     - Identifier of the job to claim
+    - Required with I(state=['post'])
+    - Used by I(state=['post'])
     type: str
   state:
     choices:
