@@ -67,7 +67,7 @@ options:
     type: int
   operationId:
     description:
-    - Identifier of the operation to be updated
+    - Identifier of the operation to be queried
     - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
     - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
@@ -100,6 +100,7 @@ options:
   resourceId:
     description:
     - Identifier of the resource whose operations will be queried
+    - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
     - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
   resourceStateConstraints:
@@ -200,26 +201,6 @@ def prepare_argument_spec():
     return argument_spec
 
 
-async def get_device_info(params, session, _url, _key):
-    async with session.get(((_url + "/") + _key)) as resp:
-        _json = await resp.json()
-        entry = _json["value"]
-        entry["_key"] = _key
-        return entry
-
-
-async def list_devices(params, session):
-    existing_entries = []
-    _url = url(params)
-    async with session.get(_url) as resp:
-        _json = await resp.json()
-        devices = _json["value"]
-    for device in devices:
-        _id = list(device.values())[0]
-        existing_entries.append((await get_device_info(params, session, _url, _id)))
-    return existing_entries
-
-
 async def main():
     module_args = prepare_argument_spec()
     module = AnsibleModule(argument_spec=module_args, supports_check_mode=True)
@@ -244,15 +225,12 @@ async def entry_point(module, session):
 
 
 async def _delete(params, session):
-    accepted_fields = ["resourceId"]
-    spec = {}
-    for i in accepted_fields:
-        if params[i] is not None:
-            spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
-    async with session.delete(_url, json=spec) as resp:
+    async with session.delete(_url) as resp:
         content_types = [
             "application/json-patch+json",
             "application/vnd.api+json",
@@ -269,15 +247,12 @@ async def _delete(params, session):
 
 
 async def _get(params, session):
-    accepted_fields = ["resourceId"]
-    spec = {}
-    for i in accepted_fields:
-        if params[i] is not None:
-            spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
-    async with session.get(_url, json=spec) as resp:
+    async with session.get(_url) as resp:
         content_types = [
             "application/json-patch+json",
             "application/vnd.api+json",
@@ -294,15 +269,12 @@ async def _get(params, session):
 
 
 async def _head(params, session):
-    accepted_fields = ["resourceId"]
-    spec = {}
-    for i in accepted_fields:
-        if params[i] is not None:
-            spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
-    async with session.head(_url, json=spec) as resp:
+    async with session.head(_url) as resp:
         content_types = [
             "application/json-patch+json",
             "application/vnd.api+json",
@@ -343,6 +315,8 @@ async def _patch(params, session):
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
     async with session.patch(_url, json=spec) as resp:
         content_types = [
@@ -385,6 +359,8 @@ async def _put(params, session):
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/{operationId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
     async with session.put(_url, json=spec) as resp:
         content_types = [

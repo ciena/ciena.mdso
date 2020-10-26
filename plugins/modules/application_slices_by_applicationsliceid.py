@@ -28,7 +28,7 @@ description: Handle resource of type application_slices_by_applicationsliceid
 options:
   applicationSliceId:
     description:
-    - Identifier of the application slice to update
+    - Identifier of the requested application slice
     - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
     - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
@@ -149,26 +149,6 @@ def prepare_argument_spec():
     return argument_spec
 
 
-async def get_device_info(params, session, _url, _key):
-    async with session.get(((_url + "/") + _key)) as resp:
-        _json = await resp.json()
-        entry = _json["value"]
-        entry["_key"] = _key
-        return entry
-
-
-async def list_devices(params, session):
-    existing_entries = []
-    _url = url(params)
-    async with session.get(_url) as resp:
-        _json = await resp.json()
-        devices = _json["value"]
-    for device in devices:
-        _id = list(device.values())[0]
-        existing_entries.append((await get_device_info(params, session, _url, _id)))
-    return existing_entries
-
-
 async def main():
     module_args = prepare_argument_spec()
     module = AnsibleModule(argument_spec=module_args, supports_check_mode=True)
@@ -278,6 +258,8 @@ async def _patch(params, session):
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/application-slices/{applicationSliceId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
     async with session.patch(_url, json=spec) as resp:
         content_types = [
@@ -315,6 +297,8 @@ async def _put(params, session):
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/application-slices/{applicationSliceId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
     async with session.put(_url, json=spec) as resp:
         content_types = [

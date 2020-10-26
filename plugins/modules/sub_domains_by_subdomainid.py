@@ -97,7 +97,7 @@ options:
     type: str
   subDomainId:
     description:
-    - Identifier of the subdomain to update
+    - Identifier of the requested subdomain
     - Required with I(state=['delete', 'get', 'head', 'patch', 'put'])
     - Used by I(state=['delete', 'get', 'head', 'patch', 'put'])
     type: str
@@ -162,26 +162,6 @@ def prepare_argument_spec():
         "operationIds": ["patch", "put"],
     }
     return argument_spec
-
-
-async def get_device_info(params, session, _url, _key):
-    async with session.get(((_url + "/") + _key)) as resp:
-        _json = await resp.json()
-        entry = _json["value"]
-        entry["_key"] = _key
-        return entry
-
-
-async def list_devices(params, session):
-    existing_entries = []
-    _url = url(params)
-    async with session.get(_url) as resp:
-        _json = await resp.json()
-        devices = _json["value"]
-    for device in devices:
-        _id = list(device.values())[0]
-        existing_entries.append((await get_device_info(params, session, _url, _id)))
-    return existing_entries
 
 
 async def main():
@@ -295,6 +275,8 @@ async def _patch(params, session):
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/sub-domains/{subDomainId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
     async with session.patch(_url, json=spec) as resp:
         content_types = [
@@ -334,6 +316,8 @@ async def _put(params, session):
             spec[i] = params[i]
     _url = "https://{mdso_hostname}/bpocore/market/api/v1/sub-domains/{subDomainId}".format(
         **params
+    ) + gen_args(
+        params, IN_QUERY_PARAMETER
     )
     async with session.put(_url, json=spec) as resp:
         content_types = [

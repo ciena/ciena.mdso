@@ -1,5 +1,11 @@
 # Ciena MDSO Release Notes
 
+## 1.1.5
+
+### Fix
+
+- send query params in post/put/patch
+
 ## 1.1.4
 
 ### Fix
