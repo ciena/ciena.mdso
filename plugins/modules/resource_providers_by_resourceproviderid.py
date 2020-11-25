@@ -195,7 +195,7 @@ async def main():
 
 
 def url(params):
-    return "https://{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
+    return "{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
         **params
     )
 
@@ -206,7 +206,7 @@ async def entry_point(module, session):
 
 
 async def _delete(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
         **params
     ) + gen_args(
         params, IN_QUERY_PARAMETER
@@ -228,7 +228,7 @@ async def _delete(params, session):
 
 
 async def _get(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
         **params
     ) + gen_args(
         params, IN_QUERY_PARAMETER
@@ -250,7 +250,7 @@ async def _get(params, session):
 
 
 async def _head(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
         **params
     ) + gen_args(
         params, IN_QUERY_PARAMETER
@@ -292,7 +292,7 @@ async def _patch(params, session):
     for i in accepted_fields:
         if params[i] is not None:
             spec[i] = params[i]
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
         **params
     ) + gen_args(
         params, IN_QUERY_PARAMETER
@@ -334,7 +334,7 @@ async def _put(params, session):
     for i in accepted_fields:
         if params[i] is not None:
             spec[i] = params[i]
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resource-providers/{resourceProviderId}".format(
         **params
     ) + gen_args(
         params, IN_QUERY_PARAMETER

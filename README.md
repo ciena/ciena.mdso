@@ -55,7 +55,7 @@ You can call modules by their Fully Qualified Collection Namespace (FQCN), such 
   - localhost
   vars:
     mdso_creds: &mdso_creds
-      mdso_hostname: 10.10.10.10
+      mdso_hostname: https://10.10.10.10
       mdso_username: admin
       mdso_password: adminpw
   collections:

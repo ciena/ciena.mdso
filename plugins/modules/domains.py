@@ -200,7 +200,7 @@ async def main():
 
 
 def url(params):
-    return "https://{mdso_hostname}/bpocore/market/api/v1/domains".format(**params)
+    return "{mdso_hostname}/bpocore/market/api/v1/domains".format(**params)
 
 
 async def entry_point(module, session):
@@ -209,9 +209,9 @@ async def entry_point(module, session):
 
 
 async def _get(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/domains".format(
-        **params
-    ) + gen_args(params, IN_QUERY_PARAMETER)
+    _url = "{mdso_hostname}/bpocore/market/api/v1/domains".format(**params) + gen_args(
+        params, IN_QUERY_PARAMETER
+    )
     async with session.get(_url) as resp:
         content_types = [
             "application/json-patch+json",
@@ -229,9 +229,9 @@ async def _get(params, session):
 
 
 async def _head(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/domains".format(
-        **params
-    ) + gen_args(params, IN_QUERY_PARAMETER)
+    _url = "{mdso_hostname}/bpocore/market/api/v1/domains".format(**params) + gen_args(
+        params, IN_QUERY_PARAMETER
+    )
     async with session.head(_url) as resp:
         content_types = [
             "application/json-patch+json",
@@ -266,9 +266,9 @@ async def _post(params, session):
     for i in accepted_fields:
         if params[i] is not None:
             spec[i] = params[i]
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/domains".format(
-        **params
-    ) + gen_args(params, IN_QUERY_PARAMETER)
+    _url = "{mdso_hostname}/bpocore/market/api/v1/domains".format(**params) + gen_args(
+        params, IN_QUERY_PARAMETER
+    )
     async with session.post(_url, json=spec) as resp:
         content_types = [
             "application/json-patch+json",

@@ -95,10 +95,8 @@ async def main():
 
 
 def url(params):
-    return (
-        "https://{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/suspended".format(
-            **params
-        )
+    return "{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/suspended".format(
+        **params
     )
 
 
@@ -113,12 +111,9 @@ async def _put(params, session):
     for i in accepted_fields:
         if params[i] is not None:
             spec[i] = params[i]
-    _url = (
-        "https://{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/suspended".format(
-            **params
-        )
-        + gen_args(params, IN_QUERY_PARAMETER)
-    )
+    _url = "{mdso_hostname}/bpocore/market/api/v1/jobs/{jobId}/suspended".format(
+        **params
+    ) + gen_args(params, IN_QUERY_PARAMETER)
     async with session.put(_url, json=spec) as resp:
         content_types = [
             "application/json-patch+json",
