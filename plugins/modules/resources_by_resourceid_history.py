@@ -125,7 +125,7 @@ async def main():
 
 
 def url(params):
-    return "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/history".format(
+    return "{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/history".format(
         **params
     )
 
@@ -136,7 +136,7 @@ async def entry_point(module, session):
 
 
 async def _get(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/history".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/history".format(
         **params
     ) + gen_args(
         params, IN_QUERY_PARAMETER
@@ -158,7 +158,7 @@ async def _get(params, session):
 
 
 async def _head(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/history".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/history".format(
         **params
     ) + gen_args(
         params, IN_QUERY_PARAMETER

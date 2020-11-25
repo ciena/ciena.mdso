@@ -95,7 +95,7 @@ async def main():
 
 
 def url(params):
-    return "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/resync".format(
+    return "{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/resync".format(
         **params
     )
 
@@ -111,11 +111,9 @@ async def _post(params, session):
     for i in accepted_fields:
         if params[i] is not None:
             spec[i] = params[i]
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/resync".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/resync".format(
         **params
-    ) + gen_args(
-        params, IN_QUERY_PARAMETER
-    )
+    ) + gen_args(params, IN_QUERY_PARAMETER)
     async with session.post(_url, json=spec) as resp:
         content_types = [
             "application/json-patch+json",

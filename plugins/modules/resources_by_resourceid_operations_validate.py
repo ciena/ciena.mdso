@@ -133,7 +133,7 @@ async def main():
 
 
 def url(params):
-    return "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/validate".format(
+    return "{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/validate".format(
         **params
     )
 
@@ -157,7 +157,7 @@ async def _post(params, session):
     for i in accepted_fields:
         if params[i] is not None:
             spec[i] = params[i]
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/validate".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/resources/{resourceId}/operations/validate".format(
         **params
     ) + gen_args(
         params, IN_QUERY_PARAMETER

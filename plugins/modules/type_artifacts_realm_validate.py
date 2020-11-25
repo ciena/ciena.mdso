@@ -82,7 +82,7 @@ async def main():
 
 
 def url(params):
-    return "https://{mdso_hostname}/bpocore/market/api/v1/type-artifacts/realm/validate".format(
+    return "{mdso_hostname}/bpocore/market/api/v1/type-artifacts/realm/validate".format(
         **params
     )
 
@@ -93,11 +93,9 @@ async def entry_point(module, session):
 
 
 async def _post(params, session):
-    _url = "https://{mdso_hostname}/bpocore/market/api/v1/type-artifacts/realm/validate".format(
+    _url = "{mdso_hostname}/bpocore/market/api/v1/type-artifacts/realm/validate".format(
         **params
-    ) + gen_args(
-        params, IN_QUERY_PARAMETER
-    )
+    ) + gen_args(params, IN_QUERY_PARAMETER)
     async with session.post(_url) as resp:
         content_types = [
             "application/json-patch+json",
