@@ -72,6 +72,8 @@ You can call modules by their Fully Qualified Collection Namespace (FQCN), such 
       var: products
 ```
 
+More examples available in `examples` dir.
+
 ## Contributing to this collection
 
 We welcome community contributions to this collection. If you find problems, please open an issue or create a PR against the [Ciena MDSO collection repository](https://github.com/ciena/ciena.mdso).

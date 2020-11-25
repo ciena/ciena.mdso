@@ -1,5 +1,12 @@
 # Ciena MDSO Release Notes
 
+## 1.1.6
+
+### Fix
+
+- Adding support for http by expecting `mdso_hostname` to include protocol (http/https).
+- Removing unused code and inaccurate code `plugins/httpapi/mdso.py` and `plugins/doc_fragments/mdso_rest_client.py`
+
 ## 1.1.5
 
 ### Fix
