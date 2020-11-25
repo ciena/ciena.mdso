@@ -1,0 +1,33 @@
+---
+- hosts:
+  - localhost
+  vars:
+    mdso_creds: &mdso_creds
+      mdso_hostname: http://192.168.33.10:8181
+      # Note that if running against bpocore-dev where http is used, no auth is required
+      # mdso_username: admin
+      # mdso_password: adminpw
+  collections:
+  - ciena.mdso
+  gather_facts: false
+  tasks:
+  - debug:
+      var: vars
+  - name: get NumberPool products
+    products:
+      <<: *mdso_creds
+      state: get
+      q: resourceTypeId:tosca.resourceTypes.NumberPool
+    register: products
+  - debug:
+      var: products
+  - name: Create number pool
+    resources:
+      <<: *mdso_creds
+      state: post
+      productId: "{{ products['items'][0]['id'] }}"
+      label: "test number pool"
+      properties:
+        lowest: 1
+        highest: 10
+      validate: True

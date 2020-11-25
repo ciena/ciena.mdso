@@ -15,7 +15,7 @@ async def open_session(
         connector_owner=False,
         headers={"content-type": "application/json"},
     ) as session:
-        if not mdso_hostname.startswith("http"):
+        if not mdso_hostname.startswith("http://"):
             async with session.post(
                 "{hostname}/tron/api/v1/tokens".format(hostname=mdso_hostname),
                 json={"username": mdso_username, "password": mdso_password},
